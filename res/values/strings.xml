@@ -8,5 +8,6 @@
     <string name="dialogTitle">ColorPicker</string>
     <string name="positive">OK</string>
     <string name="negative">Calcel</string>
+    <string name="previewTitle">Preview Color</string>
 
 </resources>

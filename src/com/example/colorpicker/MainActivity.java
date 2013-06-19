@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
 
 	private Button startButton;
 	private DialogMaker dialogMaker;

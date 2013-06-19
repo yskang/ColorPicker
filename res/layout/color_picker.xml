@@ -4,17 +4,6 @@
     android:layout_height="match_parent" >
 
     <ImageView
-        android:id="@+id/SVBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="18dp"
-        android:src="@drawable/ic_launcher" />
-
-    <ImageView
         android:id="@+id/HueBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,5 +21,35 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/HueBar"
         android:width="10dp" />
+
+    <ImageView
+        android:id="@+id/SVBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/previewTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/previewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/previewTitle"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/previewBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/SVBox"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/previewTitle"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

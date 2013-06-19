@@ -16,13 +16,20 @@ import android.graphics.Shader.TileMode;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class DialogMaker {
+public class DialogMaker implements OnColorPickerListener{
 
 	private Context context;
 	private AlertDialog dialog;
 	private RelativeLayout colorPickerView;
 	private DisplaySize displaySize;
+	private Bitmap hueBitmap;
+	private ImageView svBox;
+	private Bitmap svBitmap;
+	private OnColorTouchListener onHueBarTouchListener;
+	private OnColorTouchListener onSVBoxTouchListener;
+	private TextView previewBox;
 
 	public DialogMaker(Context context) {
 		this.context = context;
@@ -31,14 +38,20 @@ public class DialogMaker {
 		makeBitmapImage();
 		makeDialog();
 	}
-
+	
 	private void makeBitmapImage() {
-		ImageView hueBar = (ImageView) colorPickerView
-				.findViewById(R.id.HueBar);
-		hueBar.setImageBitmap(makeHueBitmap());
+		onHueBarTouchListener = new OnColorTouchListener(this, BitmapType.HUE); 
+		onSVBoxTouchListener = new OnColorTouchListener(this, BitmapType.SV); 
 
-		ImageView svBox = (ImageView) colorPickerView.findViewById(R.id.SVBox);
+		ImageView hueBar = (ImageView) colorPickerView.findViewById(R.id.HueBar);
+		hueBar.setImageBitmap(makeHueBitmap());
+		hueBar.setOnTouchListener(onHueBarTouchListener);
+
+		svBox = (ImageView) colorPickerView.findViewById(R.id.SVBox);
 		svBox.setImageBitmap(makeSVBitmap(Color.YELLOW));
+		svBox.setOnTouchListener(onSVBoxTouchListener);
+		
+		previewBox = (TextView) colorPickerView.findViewById(R.id.previewBox);
 	}
 
 	private void makeView(Context context) {
@@ -87,7 +100,7 @@ public class DialogMaker {
 
 		Canvas canvas = new Canvas();
 
-		Bitmap hueBitmap = Bitmap.createBitmap(width, height,
+		hueBitmap = Bitmap.createBitmap(width, height,
 				Bitmap.Config.ARGB_8888);
 		canvas.setBitmap(hueBitmap);
 
@@ -116,7 +129,7 @@ public class DialogMaker {
 
 		Canvas canvas = new Canvas();
 
-		Bitmap svBitmap = Bitmap.createBitmap(width, height,
+		svBitmap = Bitmap.createBitmap(width, height,
 				Bitmap.Config.ARGB_8888);
 		canvas.setBitmap(svBitmap);
 
@@ -136,5 +149,32 @@ public class DialogMaker {
 
 		return svBitmap;
 	}
+
+	@Override
+	public void onHueSelect(float x, float y) {
+		int positionX = (int)x;
+		int positionY = (int)y;
+		if( positionX > 0 && positionX < hueBitmap.getWidth() && positionY < hueBitmap.getHeight() && positionY > 0){
+			updateSVBitmap(makeSVBitmap(hueBitmap.getPixel(positionX, positionY)));
+		}
+	}
+
+	@Override
+	public void onSVSelect(float x, float y) {
+		int positionX = (int)x;
+		int positionY = (int)y;
+		if( positionX > 0 && positionX < svBitmap.getWidth() && positionY < svBitmap.getHeight() && positionY > 0){
+			updatePreviewBox(svBitmap.getPixel(positionX, positionY));
+		}
+	}
+
+	private void updatePreviewBox(int selectedColor) {
+		previewBox.setBackgroundColor(selectedColor);
+	}
+
+	private void updateSVBitmap(Bitmap svBitmap) {
+		svBox.setImageBitmap(svBitmap);
+	}
+
 
 }
