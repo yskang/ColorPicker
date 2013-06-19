@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ColorPicker</string>
+    <string name="action_settings">Settings</string>
+    <string name="buttonDescription">Click button to start ColorPicker dialog</string>
+    <string name="startButton">Start ColorPicker</string>
+    <string name="dialogTitle">ColorPicker</string>
+    <string name="positive">OK</string>
+    <string name="negative">Calcel</string>
+
+</resources>
