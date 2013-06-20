@@ -18,7 +18,7 @@ public class OnColorTouchListener implements OnTouchListener {
 		case MotionEvent.ACTION_DOWN:
 		case MotionEvent.ACTION_MOVE:
 		case MotionEvent.ACTION_UP:
-			colorPicker.onSelect(event.getX(), event.getY());
+				colorPicker.onSelect(event.getX(), event.getY());
 			return true;
 		default:
 			break;

@@ -172,4 +172,10 @@ public class ColorPickerMaker implements OnUpdateColorPicker{
 		
 	}
 
+	@Override
+	public void updateSelectionMark(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
