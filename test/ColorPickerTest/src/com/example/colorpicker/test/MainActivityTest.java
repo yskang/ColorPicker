@@ -1,10 +1,10 @@
 package com.example.colorpicker.test;
 
+import android.test.ActivityInstrumentationTestCase2;
+
 import com.example.colorpicker.MainActivity;
 import com.example.colorpicker.R;
 import com.jayway.android.robotium.solo.Solo;
-
-import android.test.ActivityInstrumentationTestCase2;
 
 public class MainActivityTest extends
 		ActivityInstrumentationTestCase2<MainActivity> {
@@ -43,7 +43,4 @@ public class MainActivityTest extends
 		assertEquals(R.id.HueBar, solo.getView(R.id.HueBar).getId());
 	}
 
-	public void test(){
-	}
-	
 }

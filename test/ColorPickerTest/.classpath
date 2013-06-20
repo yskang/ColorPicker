@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="lib" path="libs/hamcrest-all-1.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/ColorPickerTest/doc/hamcrest-all-1.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="libs/jmock-2.5.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/ColorPickerTest/doc/jmock-2.5.1-javadoc.zip!/jmock-2.5.1/doc"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="libs/robotium-solo-4.1.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/ColorPickerTest/doc/robotium-solo-4.1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ColorPicker"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
