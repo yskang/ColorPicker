@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class ColorPickerMaker implements OnColorPickerListener{
+public class ColorPickerMaker implements OnUpdateColorPicker{
 
 	private Context context;
 	private AlertDialog dialog;
@@ -27,8 +27,6 @@ public class ColorPickerMaker implements OnColorPickerListener{
 	private Bitmap hueBitmap;
 	private ImageView svBox;
 	private Bitmap svBitmap;
-	private OnColorTouchListener onHueBarTouchListener;
-	private OnColorTouchListener onSVBoxTouchListener;
 	private TextView previewBox;
 
 	public ColorPickerMaker(Context context) {
@@ -40,16 +38,13 @@ public class ColorPickerMaker implements OnColorPickerListener{
 	}
 	
 	private void makeBitmapImage() {
-		onHueBarTouchListener = new OnColorTouchListener(this, BitmapType.HUE); 
-		onSVBoxTouchListener = new OnColorTouchListener(this, BitmapType.SV); 
-
 		ImageView hueBar = (ImageView) colorPickerView.findViewById(R.id.HueBar);
 		hueBar.setImageBitmap(makeHueBitmap());
-		hueBar.setOnTouchListener(onHueBarTouchListener);
+		hueBar.setOnTouchListener(new OnColorTouchListener(new OnHuePickerListener(this)));
 
 		svBox = (ImageView) colorPickerView.findViewById(R.id.SVBox);
 		svBox.setImageBitmap(makeSVBitmap(Color.YELLOW));
-		svBox.setOnTouchListener(onSVBoxTouchListener);
+		svBox.setOnTouchListener(new OnColorTouchListener(new OnSVPickerListener(this)));
 		
 		previewBox = (TextView) colorPickerView.findViewById(R.id.previewBox);
 	}
@@ -151,30 +146,25 @@ public class ColorPickerMaker implements OnColorPickerListener{
 	}
 
 	@Override
-	public void onHueSelect(float x, float y) {
-		int positionX = (int)x;
-		int positionY = (int)y;
-		if( positionX > 0 && positionX < hueBitmap.getWidth() && positionY < hueBitmap.getHeight() && positionY > 0){
-			updateSVBitmap(makeSVBitmap(hueBitmap.getPixel(positionX, positionY)));
+	public void updatePreviewBox(int x, int y) {
+		if(checkValidate(x, y, svBitmap)){
+			previewBox.setBackgroundColor(svBitmap.getPixel(x, y));
 		}
 	}
 
 	@Override
-	public void onSVSelect(float x, float y) {
-		int positionX = (int)x;
-		int positionY = (int)y;
-		if( positionX > 0 && positionX < svBitmap.getWidth() && positionY < svBitmap.getHeight() && positionY > 0){
-			updatePreviewBox(svBitmap.getPixel(positionX, positionY));
+	public void updateSVBitmap(int x, int y) {
+		if(checkValidate(x, y, hueBitmap)){
+			svBox.setImageBitmap(makeSVBitmap(hueBitmap.getPixel(x, y)));
 		}
 	}
-
-	private void updatePreviewBox(int selectedColor) {
-		previewBox.setBackgroundColor(selectedColor);
+	
+	private boolean checkValidate(int x, int y, Bitmap bitmap) {
+		if(x > 0 && x < bitmap.getWidth() && y > 0 && y < bitmap.getHeight()){
+			return true;
+		}
+		
+		return false;
 	}
-
-	private void updateSVBitmap(Bitmap svBitmap) {
-		svBox.setImageBitmap(svBitmap);
-	}
-
 
 }
