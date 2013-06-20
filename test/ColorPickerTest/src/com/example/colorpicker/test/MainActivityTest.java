@@ -43,6 +43,7 @@ public class MainActivityTest extends
 		assertEquals(R.id.HueBar, solo.getView(R.id.HueBar).getId());
 	}
 
-	
+	public void test(){
+	}
 	
 }

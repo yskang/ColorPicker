@@ -8,7 +8,7 @@ import android.widget.Button;
 public class MainActivity extends Activity{
 
 	private Button startButton;
-	private DialogMaker dialogMaker;
+	private ColorPickerMaker colorPickerMaker;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +17,8 @@ public class MainActivity extends Activity{
 
 		startButton = (Button) findViewById(R.id.startColorPicker);
 
-		dialogMaker = new DialogMaker(this);
-		startButton.setOnClickListener(new OnStartButtonListener(dialogMaker
+		colorPickerMaker = new ColorPickerMaker(this);
+		startButton.setOnClickListener(new OnStartButtonListener(colorPickerMaker
 				.getDialog()));
 	}
 
