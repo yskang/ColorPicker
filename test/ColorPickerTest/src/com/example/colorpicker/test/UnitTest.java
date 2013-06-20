@@ -21,7 +21,7 @@ public class UnitTest extends TestCase {
 	final static float x = 10;
 	final static float y = 10;
 
-	public void testSelectionBarMustSeenByTouchTheHueBar() {
+	public void testTheonSelectMethodShouldCalledByTouchEventDown() {
 
 		MotionEvent motionEvent = MotionEvent.obtain(1, 1,
 				MotionEvent.ACTION_DOWN, x, y, 0);
@@ -34,6 +34,54 @@ public class UnitTest extends TestCase {
 
 		onColorTouchListener.onTouch(null, motionEvent);
 
+		context.assertIsSatisfied();
+	}
+	
+	public void testTheonSelectMethodShouldCalledByTouchEventUp() {
+		
+		MotionEvent motionEvent = MotionEvent.obtain(1, 1,
+				MotionEvent.ACTION_UP, x, y, 0);
+		
+		context.checking(new Expectations() {
+			{
+				atLeast(1).of(onHuePickerListener).onSelect(x, y);
+			}
+		});
+		
+		onColorTouchListener.onTouch(null, motionEvent);
+		
+		context.assertIsSatisfied();
+	}
+	
+	public void testTheonSelectMethodShouldCalledByTouchEventMove() {
+		
+		MotionEvent motionEvent = MotionEvent.obtain(1, 1,
+				MotionEvent.ACTION_MOVE, x, y, 0);
+		
+		context.checking(new Expectations() {
+			{
+				atLeast(1).of(onHuePickerListener).onSelect(x, y);
+			}
+		});
+		
+		onColorTouchListener.onTouch(null, motionEvent);
+		
+		context.assertIsSatisfied();
+	}
+
+	public void testTheonSelectMethodShouldNotCalledByTouchEvent() {
+		
+		MotionEvent motionEvent = MotionEvent.obtain(1, 1,
+				MotionEvent.ACTION_OUTSIDE, x, y, 0);
+		
+		context.checking(new Expectations() {
+			{
+				never(onHuePickerListener).onSelect(x, y);
+			}
+		});
+		
+		onColorTouchListener.onTouch(null, motionEvent);
+		
 		context.assertIsSatisfied();
 	}
 
