@@ -11,6 +11,7 @@ public class OnHuePickerListener implements OnColorPickerListener {
 	@Override
 	public void onSelect(float x, float y) {
 		colorPicker.updateSVBitmap((int)x, (int)y);
+		colorPicker.drawHueSeletionBar((int)x, (int)y);
 	}
 	
 }

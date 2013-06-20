@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import com.example.colorpicker.OnColorPickerListener;
 import com.example.colorpicker.OnColorTouchListener;
 
-public class UnitTest extends TestCase {
+public class OnColorTouchListenerUnitTest extends TestCase {
 
 	Mockery context = new Mockery();
 

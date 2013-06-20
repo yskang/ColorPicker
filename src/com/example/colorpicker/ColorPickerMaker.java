@@ -168,8 +168,7 @@ public class ColorPickerMaker implements OnUpdateColorPicker{
 	}
 
 	@Override
-	public void drawHueSeletionBar() {
-		// TODO Auto-generated method stub
+	public void drawHueSeletionBar(int x, int y) {
 		
 	}
 
