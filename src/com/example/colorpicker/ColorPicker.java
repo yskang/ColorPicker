@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class ColorPickerMaker implements OnUpdateColorPicker{
+public class ColorPicker implements OnUpdateColorPicker{
 
 	private Context context;
 	private AlertDialog dialog;
@@ -29,7 +29,7 @@ public class ColorPickerMaker implements OnUpdateColorPicker{
 	private Bitmap svBitmap;
 	private TextView previewBox;
 
-	public ColorPickerMaker(Context context) {
+	public ColorPicker(Context context) {
 		this.context = context;
 		displaySize = new DisplaySize(context);
 		makeView(context);
