@@ -11,7 +11,6 @@ import android.graphics.ComposeShader;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
@@ -36,26 +35,99 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private int selectedHue;
 	private int sv_x;
 	private int sv_y;
-
-	public ColorPicker(Context context) {
+	private Bitmap hueBitmapCopy;
+	private Paint paintBlack;
+	private Paint paintWhite;
+	private int hueWidth;
+	private int hueHeight;
+	private int svWidth;
+	private int svHeight;
+	private final static float WIDTH_RATIO = 0.8f;
+	private final static float HUE_HEIGHT_RATIO = 0.05f;
+	private final static float SV_HEIGHT_RATIO = 0.6f;
+	private Paint svPaint;
+	private Canvas svCanvas;
+	private Shader shaderValue;
+	
+	public ColorPicker(Context context, int initialColor) {
 		this.context = context;
+
 		displaySize = new DisplaySize(context);
 		makeView(context);
+		getInitialColorPosition(initialColor);
+		initPaints();
 		setViews();
+		updateHueBar(hue_x, hue_y);
 		makeDialog();
 	}
 	
-	private void setViews() {
-		hueBar = (ImageView) colorPickerView.findViewById(R.id.HueBar);
-		hueBar.setImageBitmap(makeHueBitmap());
+	private void initPaints() {
+		paintBlack = new Paint();
+		paintWhite = new Paint();
+		svPaint = new Paint();
 
+		paintBlack.setColor(Color.BLACK);
+		paintBlack.setAntiAlias(true);
+		paintBlack.setStrokeWidth(2);
+		paintBlack.setStyle(Paint.Style.STROKE);
+		
+		paintWhite.setColor(Color.WHITE);
+		paintWhite.setAntiAlias(true);
+		paintWhite.setStrokeWidth(1);
+		paintWhite.setStyle(Paint.Style.STROKE);
+
+		svPaint.setAntiAlias(true);
+		
+		svCanvas = new Canvas();
+
+		svBitmap = Bitmap.createBitmap(svWidth, svHeight,
+				Bitmap.Config.ARGB_8888);
+		svCanvas.setBitmap(svBitmap);
+		
+		shaderValue = new LinearGradient(1, 1, 1, svHeight - 1, 0,
+				Color.BLACK, TileMode.CLAMP);
+
+	}
+
+	private void getInitialColorPosition(int color) {
+		float[] hsv = new float[3];
+		Color.colorToHSV(color, hsv);
+		selectedHue = color;
+		
+		hueWidth = (int)(displaySize.getDisplayWidthInPixel()*WIDTH_RATIO);
+		hueHeight = (int)(displaySize.getDisplayHeightInPixel() * HUE_HEIGHT_RATIO);
+		svWidth = hueWidth;
+		svHeight = (int)(displaySize.getDisplayWidthInPixel()*SV_HEIGHT_RATIO);
+		
+		hue_x = (int)(hsv[0]*hueWidth/360);
+		hue_y = (int)(0.5 * hueHeight);
+
+		sv_x = (int)(hsv[1] * svWidth);
+		sv_y = (int)(svHeight - hsv[2] * svHeight);
+		
+		if(hue_x == 0) hue_x = 1;
+		if(hue_x == hueWidth) hue_x = hueWidth - 1;
+		if(sv_x == 0) sv_x = 1;
+		if(sv_x == svWidth) sv_x = svWidth - 2;
+		if(sv_y == 0) sv_y = 1;
+		if(sv_y == svHeight) sv_y = svHeight - 2; 
+	
+	}
+
+	private void setViews() {
+		hueBitmap = makeHueBitmap();
+		
+		hueBar = (ImageView) colorPickerView.findViewById(R.id.HueBar);
+		hueBar.setImageBitmap(hueBitmap);
+		
 		hueBar.getLayoutParams().height = hueBitmap.getHeight();
 		hueBar.getLayoutParams().width = hueBitmap.getWidth();
-		
+
 		hueBar.setOnTouchListener(new OnColorTouch(new OnHuePicker(this)));
 
 		svBox = (ImageView) colorPickerView.findViewById(R.id.SVBox);
-		svBox.setImageBitmap(makeSVBitmap(Color.YELLOW));
+		makeSVBitmap(selectedHue);
+		svBox.setImageBitmap(svBitmap);
 		
 		svBox.getLayoutParams().height = svBitmap.getHeight();
 		svBox.getLayoutParams().width = svBitmap.getWidth();
@@ -106,12 +178,9 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 
 	private Bitmap makeHueBitmap() {
-		int width = (int) (displaySize.getDisplayWidthInPixel() * 0.6);
-		int height = (int) (displaySize.getDisplayHeightInPixel() * 0.05);
-
 		Canvas canvas = new Canvas();
 
-		hueBitmap = Bitmap.createBitmap(width, height,
+		hueBitmap = Bitmap.createBitmap(hueWidth, hueHeight,
 				Bitmap.Config.ARGB_8888);
 		canvas.setBitmap(hueBitmap);
 
@@ -123,59 +192,29 @@ public class ColorPicker implements OnUpdateColorPicker{
 		float[] colors_position = { 0.0f, 0.17f, 0.34f, 0.51f, 0.68f, 0.85f,
 				1.0f };
 
-		LinearGradient shader = new LinearGradient(0, (float) (height * 0.5),
-				width, (float) (height * 0.5), colors, colors_position,
+		LinearGradient shader = new LinearGradient(0, (float) (hueHeight * 0.5),
+				hueWidth, (float) (hueHeight * 0.5), colors, colors_position,
 				Shader.TileMode.CLAMP);
 		paint.setShader(shader);
 
-		canvas.drawRect(0, 0, width, height, paint);
+		canvas.drawRect(0, 0, hueWidth, hueHeight, paint);
 
 		return hueBitmap;
 	}
 
-	private Bitmap makeSVBitmap(int selectedColor) {
-
-		int width = (int) (displaySize.getDisplayWidthInPixel() * 0.6);
-		int height = (int) (displaySize.getDisplayHeightInPixel() * 0.3);
-
-		Canvas canvas = new Canvas();
-
-		svBitmap = Bitmap.createBitmap(width, height,
-				Bitmap.Config.ARGB_8888);
-		canvas.setBitmap(svBitmap);
-
-		Paint paint = new Paint();
-		paint.setAntiAlias(true);
-
-		Shader shaderSaturation = new LinearGradient(1, 1, width - 1, 1,
+	private void makeSVBitmap(int selectedColor) {
+		Shader shaderSaturation = new LinearGradient(1, 1, svWidth - 1, 1,
 				Color.WHITE, selectedColor, TileMode.CLAMP);
-		Shader shaderValue = new LinearGradient(1, 1, 1, height - 1, 0,
-				Color.BLACK, TileMode.CLAMP);
 
 		ComposeShader shader = new ComposeShader(shaderSaturation, shaderValue,
 				PorterDuff.Mode.DARKEN);
 
-		paint.setShader(shader);
-		canvas.drawRect(1, 1, width - 1, height - 1, paint);
-
-		return svBitmap;
+		svPaint.setShader(shader);
+		svCanvas.drawRect(1, 1, svWidth - 1, svHeight - 1, svPaint);
 	}
 
 	private void updatePreviewBox(int color) {
 		previewBox.setBackgroundColor(color);
-	}
-
-	@Override
-	public void updateSVBitmap(int x, int y) {
-		if(checkValidate(x, y, this.svBitmap)){
-			Bitmap tempSVBitmap;
-			int selectedColor;
-			setSVSelectedPosition(x, y);
-			tempSVBitmap = makeSVBitmap(selectedHue);
-			selectedColor = getSelectedColor();
-			svBox.setImageBitmap(drawSelectionBoxOnSVBitmap(tempSVBitmap));
-			updatePreviewBox(selectedColor);
-		}
 	}
 
 	private int getSelectedColor() {
@@ -202,51 +241,40 @@ public class ColorPicker implements OnUpdateColorPicker{
 	@Override
 	public void updateHueBar(int x, int y) {
 		if(checkValidate(x, y, hueBitmap)){
-			Bitmap hueBitmap;
 			setHueSelectedPosition(x, y);
-			hueBitmap = makeHueBitmap();
 			selectedHue = getHueColor();
 			hueBar.setImageBitmap(drawSelectionBoxOnHueBitmap(hueBitmap));
-			updateSVBitmap(sv_x, sv_y);
+			updateSVBox(sv_x, sv_y);
 		}
 	}
 
+	@Override
+	public void updateSVBox(int x, int y) {
+		if(checkValidate(x, y, this.svBitmap)){
+			int selectedColor;
+			setSVSelectedPosition(x, y);
+			makeSVBitmap(selectedHue);
+			selectedColor = getSelectedColor();
+			svBox.setImageBitmap(drawSelectionBoxOnSVBitmap(svBitmap));
+			updatePreviewBox(selectedColor);
+		}
+	}
+	
 	private Bitmap drawSelectionBoxOnHueBitmap(Bitmap hueBitmap) {
-		Canvas canvas = new Canvas(hueBitmap);
-		Paint paintBlack = new Paint();
-		Paint paintWhite = new Paint();
+		hueBitmapCopy = Bitmap.createBitmap(hueBitmap);
+		Canvas hueCanvas = new Canvas(hueBitmapCopy);
 		
-		RectF rectBlack = new RectF((int)(hue_x-5), 0.f, (int)(hue_x+5), (int)hueBar.getHeight());
-		RectF rectWhite = new RectF((int)(hue_x-4), 1.f, (int)(hue_x+6), (int)hueBar.getHeight());
+		RectF rectBlack = new RectF((int)(hue_x-5), 0.f, (int)(hue_x+5), (int)hueBitmap.getHeight());
+		RectF rectWhite = new RectF((int)(hue_x-4), 1.f, (int)(hue_x+6), (int)hueBitmap.getHeight());
 		
-		paintBlack.setColor(Color.BLACK);
-		paintBlack.setAntiAlias(true);
-		paintBlack.setStrokeWidth(2);
-		paintBlack.setStyle(Paint.Style.STROKE);
-		paintWhite.setColor(Color.WHITE);
-		paintWhite.setAntiAlias(true);
-		paintWhite.setStrokeWidth(1);
-		paintWhite.setStyle(Paint.Style.STROKE);
-		
-		canvas.drawRoundRect(rectWhite, 10, 10, paintWhite);
-		canvas.drawRoundRect(rectBlack, 10, 10, paintBlack);
+		hueCanvas.drawRoundRect(rectWhite, 10, 10, paintWhite);
+		hueCanvas.drawRoundRect(rectBlack, 10, 10, paintBlack);
 
-		return hueBitmap;
+		return hueBitmapCopy;
 	}
 
 	private Bitmap drawSelectionBoxOnSVBitmap(Bitmap svBitmap) {
 		Canvas canvas = new Canvas(svBitmap);
-		Paint paintBlack = new Paint();
-		Paint paintWhite = new Paint();
-
-		paintBlack.setColor(Color.BLACK);
-		paintBlack.setAntiAlias(true);
-		paintBlack.setStrokeWidth(2);
-		paintBlack.setStyle(Paint.Style.STROKE);
-		paintWhite.setColor(Color.WHITE);
-		paintWhite.setAntiAlias(true);
-		paintWhite.setStrokeWidth(1);
-		paintWhite.setStyle(Paint.Style.STROKE);
 
 		canvas.drawCircle(sv_x, sv_y, 10, paintBlack);
 		canvas.drawCircle(sv_x, sv_y, 9, paintWhite);

@@ -15,13 +15,23 @@
         android:text="@string/buttonDescription" />
 
     <Button
-        android:id="@+id/startColorPicker"
+        android:id="@+id/startColorPicker_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/buttonDescription"
         android:layout_marginTop="17dp"
+        android:text="@string/startButton" />
+
+    <Button
+        android:id="@+id/startColorPicker_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/startColorPicker_1"
+        android:layout_alignRight="@+id/startColorPicker_1"
+        android:layout_below="@+id/startColorPicker_1"
+        android:layout_marginTop="22dp"
         android:text="@string/startButton" />
 
 </RelativeLayout>

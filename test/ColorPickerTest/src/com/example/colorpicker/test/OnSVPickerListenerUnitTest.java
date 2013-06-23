@@ -19,7 +19,7 @@ public class OnSVPickerListenerUnitTest extends TestCase {
 	
 	public void testPreviewColorBoxShouldUpdateAndMarkDisplayedWhenUserTouchSVColorBox() throws Exception {
 		context.checking(new Expectations(){{
-			atLeast(1).of(colorPicker).updateSVBitmap((int)x, (int)y);
+			atLeast(1).of(colorPicker).updateSVBox((int)x, (int)y);
 		}});
 		
 		onSVPickerListener.onSelect(x, y);

@@ -10,7 +10,7 @@ public class OnSVPicker implements OnColorPickerListener {
 	
 	@Override
 	public void onSelect(float x, float y) {
-		colorPicker.updateSVBitmap((int)x, (int)y);
+		colorPicker.updateSVBox((int)x, (int)y);
 	}
 
 }
