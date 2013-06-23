@@ -1,10 +1,10 @@
 package com.example.colorpicker;
 
-public class OnSVPickerListener implements OnColorPickerListener {
+public class OnSVPicker implements OnColorPickerListener {
 
 	private OnUpdateColorPicker colorPicker;
 
-	public OnSVPickerListener(OnUpdateColorPicker colorPicker){
+	public OnSVPicker(OnUpdateColorPicker colorPicker){
 		this.colorPicker = colorPicker;
 	}
 	

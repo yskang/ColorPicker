@@ -8,7 +8,7 @@ import org.jmock.Mockery;
 import android.view.MotionEvent;
 
 import com.example.colorpicker.OnColorPickerListener;
-import com.example.colorpicker.OnColorTouchListener;
+import com.example.colorpicker.OnColorTouch;
 
 public class OnColorTouchListenerUnitTest extends TestCase {
 
@@ -16,7 +16,7 @@ public class OnColorTouchListenerUnitTest extends TestCase {
 
 	OnColorPickerListener onHuePickerListener = context
 			.mock(OnColorPickerListener.class);
-	OnColorTouchListener onColorTouchListener = new OnColorTouchListener(
+	OnColorTouch onColorTouchListener = new OnColorTouch(
 			onHuePickerListener);
 	final static float x = 10;
 	final static float y = 10;

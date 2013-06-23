@@ -4,11 +4,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
-public class OnColorTouchListener implements OnTouchListener {
+public class OnColorTouch implements OnTouchListener {
 
 	private OnColorPickerListener colorPicker;
 
-	public OnColorTouchListener(OnColorPickerListener colorPicker) {
+	public OnColorTouch(OnColorPickerListener colorPicker) {
 		this.colorPicker = colorPicker;
 	}
 

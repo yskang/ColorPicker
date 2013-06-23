@@ -3,7 +3,7 @@ package com.example.colorpicker.test;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 
-import com.example.colorpicker.OnHuePickerListener;
+import com.example.colorpicker.OnHuePicker;
 import com.example.colorpicker.OnUpdateColorPicker;
 
 import junit.framework.TestCase;
@@ -16,12 +16,11 @@ public class OnHuePickerListenerUnitTest extends TestCase {
 	Mockery context = new Mockery();
 	
 	OnUpdateColorPicker colorPicker = context.mock(OnUpdateColorPicker.class);
-	OnHuePickerListener onHuePickerListener = new OnHuePickerListener(colorPicker);
+	OnHuePicker onHuePickerListener = new OnHuePicker(colorPicker);
 		
 	public void testDrawFuntionSholdCalledWhenColorIsSelected(){
 		context.checking(new Expectations(){{
-			atLeast(1).of(colorPicker).updateSVBitmap((int)x, (int)y);
-			atLeast(1).of(colorPicker).drawHueSeletionBar((int)x, (int)y);
+			atLeast(1).of(colorPicker).updateHueBar((int)x, (int)y);
 		}});
 		
 		onHuePickerListener.onSelect(x, y);

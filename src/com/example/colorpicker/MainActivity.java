@@ -18,7 +18,7 @@ public class MainActivity extends Activity{
 		startButton = (Button) findViewById(R.id.startColorPicker);
 
 		colorPickerMaker = new ColorPicker(this);
-		startButton.setOnClickListener(new OnStartButtonListener(colorPickerMaker
+		startButton.setOnClickListener(new OnStartButton(colorPickerMaker
 				.getDialog()));
 	}
 

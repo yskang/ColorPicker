@@ -14,6 +14,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.view.LayoutInflater;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,9 +26,12 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private RelativeLayout colorPickerView;
 	private DisplaySize displaySize;
 	private Bitmap hueBitmap;
-	private ImageView svBox;
 	private Bitmap svBitmap;
+	private ImageView svBox;
+	private ImageView hueBar;
 	private TextView previewBox;
+	private int hue_x;
+	private int hue_y;
 
 	public ColorPicker(Context context) {
 		this.context = context;
@@ -38,13 +42,18 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 	
 	private void makeBitmapImage() {
-		ImageView hueBar = (ImageView) colorPickerView.findViewById(R.id.HueBar);
+		hueBar = (ImageView) colorPickerView.findViewById(R.id.HueBar);
 		hueBar.setImageBitmap(makeHueBitmap());
-		hueBar.setOnTouchListener(new OnColorTouchListener(new OnHuePickerListener(this)));
+
+		hueBar.getLayoutParams().height = hueBitmap.getHeight();
+		hueBar.getLayoutParams().width = hueBitmap.getWidth();
+		
+//		hueBar.setLayoutParams(hueBar.getLayoutParams());
+		hueBar.setOnTouchListener(new OnColorTouch(new OnHuePicker(this)));
 
 		svBox = (ImageView) colorPickerView.findViewById(R.id.SVBox);
 		svBox.setImageBitmap(makeSVBitmap(Color.YELLOW));
-		svBox.setOnTouchListener(new OnColorTouchListener(new OnSVPickerListener(this)));
+		svBox.setOnTouchListener(new OnColorTouch(new OnSVPicker(this)));
 		
 		previewBox = (TextView) colorPickerView.findViewById(R.id.previewBox);
 	}
@@ -90,7 +99,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 
 	private Bitmap makeHueBitmap() {
-		int width = (int) (displaySize.getDisplayWidthInPixel() * 0.8);
+		int width = (int) (displaySize.getDisplayWidthInPixel() * 0.6);
 		int height = (int) (displaySize.getDisplayHeightInPixel() * 0.05);
 
 		Canvas canvas = new Canvas();
@@ -119,7 +128,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 
 	private Bitmap makeSVBitmap(int selectedColor) {
 
-		int width = (int) (displaySize.getDisplayWidthInPixel() * 0.8);
+		int width = (int) (displaySize.getDisplayWidthInPixel() * 0.6);
 		int height = (int) (displaySize.getDisplayHeightInPixel() * 0.3);
 
 		Canvas canvas = new Canvas();
@@ -152,24 +161,46 @@ public class ColorPicker implements OnUpdateColorPicker{
 		}
 	}
 
-	@Override
-	public void updateSVBitmap(int x, int y) {
-		if(checkValidate(x, y, hueBitmap)){
-			svBox.setImageBitmap(makeSVBitmap(hueBitmap.getPixel(x, y)));
-		}
+	public void updateSVBitmap(int selectedColor) {
+		svBox.setImageBitmap(makeSVBitmap(selectedColor));
+	}
+	
+	public int getHueColor(){
+		return hueBitmap.getPixel(hue_x, hue_y);
 	}
 	
 	private boolean checkValidate(int x, int y, Bitmap bitmap) {
 		if(x > 0 && x < bitmap.getWidth() && y > 0 && y < bitmap.getHeight()){
 			return true;
 		}
-		
 		return false;
 	}
 
+	
 	@Override
-	public void drawHueSeletionBar(int x, int y) {
-		
+	public void updateHueBar(int x, int y) {
+		if(checkValidate(x, y, hueBitmap)){
+			Bitmap hueBitmap;
+			int selectedColor;
+			setHueSelectedPosition(x, y);
+			hueBitmap = makeHueBitmap();
+			selectedColor = getHueColor();
+			hueBar.setImageBitmap(drawSelectionBoxOnHueBitmap(hueBitmap));
+			updateSVBitmap(selectedColor);
+		}
+	}
+
+	private Bitmap drawSelectionBoxOnHueBitmap(Bitmap hueBitmap) {
+		Canvas canvas = new Canvas(hueBitmap);
+		Paint paint = new Paint();
+		paint.setAntiAlias(true);
+		canvas.drawCircle(hue_x, hue_y, 10, paint);
+		return hueBitmap;
+	}
+
+	private void setHueSelectedPosition(int x, int y) {
+		hue_x = x;
+		hue_y = y;
 	}
 
 	@Override
