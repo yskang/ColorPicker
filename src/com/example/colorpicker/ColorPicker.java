@@ -48,11 +48,14 @@ public class ColorPicker implements OnUpdateColorPicker{
 		hueBar.getLayoutParams().height = hueBitmap.getHeight();
 		hueBar.getLayoutParams().width = hueBitmap.getWidth();
 		
-//		hueBar.setLayoutParams(hueBar.getLayoutParams());
 		hueBar.setOnTouchListener(new OnColorTouch(new OnHuePicker(this)));
 
 		svBox = (ImageView) colorPickerView.findViewById(R.id.SVBox);
 		svBox.setImageBitmap(makeSVBitmap(Color.YELLOW));
+		
+		svBox.getLayoutParams().height = svBitmap.getHeight();
+		svBox.getLayoutParams().width = svBitmap.getWidth();
+		
 		svBox.setOnTouchListener(new OnColorTouch(new OnSVPicker(this)));
 		
 		previewBox = (TextView) colorPickerView.findViewById(R.id.previewBox);

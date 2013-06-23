@@ -24,7 +24,7 @@
 
     <ImageView
         android:id="@+id/SVBox"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/previewTitle"
         android:layout_centerHorizontal="true"
@@ -35,8 +35,7 @@
         android:id="@+id/previewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/SVBox"
         android:layout_marginTop="10dp"
         android:text="@string/previewTitle"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -46,9 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/SVBox"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_alignRight="@+id/SVBox"
+        android:layout_alignTop="@+id/previewTitle"
+        android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/previewTitle"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
