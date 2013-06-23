@@ -14,7 +14,6 @@ import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.view.LayoutInflater;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -199,7 +198,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 	
 	private boolean checkValidate(int x, int y, Bitmap bitmap) {
-		if(x > 0 && x < bitmap.getWidth() && y > 0 && y < bitmap.getHeight()){
+		if(x > 0 && x < bitmap.getWidth()-1 && y > 0 && y < bitmap.getHeight()-1){
 			return true;
 		}
 		return false;
