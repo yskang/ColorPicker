@@ -194,10 +194,6 @@ public class ColorPicker implements OnUpdateColorPicker{
 		sv_y = y;
 	}
 
-	private void updateSVBitmap() {
-		svBox.setImageBitmap(makeSVBitmap(selectedHue));
-	}
-	
 	public int getHueColor(){
 		return hueBitmap.getPixel(hue_x, hue_y);
 	}
@@ -218,7 +214,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 			hueBitmap = makeHueBitmap();
 			selectedHue = getHueColor();
 			hueBar.setImageBitmap(drawSelectionBoxOnHueBitmap(hueBitmap));
-			updateSVBitmap();
+			updateSVBitmap(sv_x, sv_y);
 		}
 	}
 
