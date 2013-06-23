@@ -11,6 +11,8 @@ import android.graphics.ComposeShader;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.view.LayoutInflater;
@@ -39,11 +41,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 		this.context = context;
 		displaySize = new DisplaySize(context);
 		makeView(context);
-		makeBitmapImage();
+		setViews();
 		makeDialog();
 	}
 	
-	private void makeBitmapImage() {
+	private void setViews() {
 		hueBar = (ImageView) colorPickerView.findViewById(R.id.HueBar);
 		hueBar.setImageBitmap(makeHueBitmap());
 
@@ -176,14 +178,6 @@ public class ColorPicker implements OnUpdateColorPicker{
 		}
 	}
 
-	private Bitmap drawSelectionBoxOnSVBitmap(Bitmap svBitmap) {
-		Canvas canvas = new Canvas(svBitmap);
-		Paint paint = new Paint();
-		paint.setAntiAlias(true);
-		canvas.drawCircle(sv_x, sv_y, 10, paint);
-		return svBitmap;
-	}
-
 	private int getSelectedColor() {
 		return svBitmap.getPixel(sv_x, sv_y);
 	}
@@ -219,12 +213,47 @@ public class ColorPicker implements OnUpdateColorPicker{
 
 	private Bitmap drawSelectionBoxOnHueBitmap(Bitmap hueBitmap) {
 		Canvas canvas = new Canvas(hueBitmap);
-		Paint paint = new Paint();
-		paint.setAntiAlias(true);
-		canvas.drawCircle(hue_x, hue_y, 10, paint);
+		Paint paintBlack = new Paint();
+		Paint paintWhite = new Paint();
+		
+		RectF rectBlack = new RectF((int)(hue_x-5), 0.f, (int)(hue_x+5), (int)hueBar.getHeight());
+		RectF rectWhite = new RectF((int)(hue_x-4), 1.f, (int)(hue_x+6), (int)hueBar.getHeight());
+		
+		paintBlack.setColor(Color.BLACK);
+		paintBlack.setAntiAlias(true);
+		paintBlack.setStrokeWidth(2);
+		paintBlack.setStyle(Paint.Style.STROKE);
+		paintWhite.setColor(Color.WHITE);
+		paintWhite.setAntiAlias(true);
+		paintWhite.setStrokeWidth(1);
+		paintWhite.setStyle(Paint.Style.STROKE);
+		
+		canvas.drawRoundRect(rectWhite, 10, 10, paintWhite);
+		canvas.drawRoundRect(rectBlack, 10, 10, paintBlack);
+
 		return hueBitmap;
 	}
 
+	private Bitmap drawSelectionBoxOnSVBitmap(Bitmap svBitmap) {
+		Canvas canvas = new Canvas(svBitmap);
+		Paint paintBlack = new Paint();
+		Paint paintWhite = new Paint();
+
+		paintBlack.setColor(Color.BLACK);
+		paintBlack.setAntiAlias(true);
+		paintBlack.setStrokeWidth(2);
+		paintBlack.setStyle(Paint.Style.STROKE);
+		paintWhite.setColor(Color.WHITE);
+		paintWhite.setAntiAlias(true);
+		paintWhite.setStrokeWidth(1);
+		paintWhite.setStyle(Paint.Style.STROKE);
+
+		canvas.drawCircle(sv_x, sv_y, 10, paintBlack);
+		canvas.drawCircle(sv_x, sv_y, 9, paintWhite);
+		canvas.drawCircle(sv_x, sv_y, 12, paintWhite);
+		return svBitmap;
+	}
+	
 	private void setHueSelectedPosition(int x, int y) {
 		hue_x = x;
 		hue_y = y;
