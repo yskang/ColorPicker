@@ -32,6 +32,9 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private TextView previewBox;
 	private int hue_x;
 	private int hue_y;
+	private int selectedHue;
+	private int sv_x;
+	private int sv_y;
 
 	public ColorPicker(Context context) {
 		this.context = context;
@@ -157,15 +160,42 @@ public class ColorPicker implements OnUpdateColorPicker{
 		return svBitmap;
 	}
 
+	private void updatePreviewBox(int color) {
+		previewBox.setBackgroundColor(color);
+	}
+
 	@Override
-	public void updatePreviewBox(int x, int y) {
-		if(checkValidate(x, y, svBitmap)){
-			previewBox.setBackgroundColor(svBitmap.getPixel(x, y));
+	public void updateSVBitmap(int x, int y) {
+		if(checkValidate(x, y, this.svBitmap)){
+			Bitmap tempSVBitmap;
+			int selectedColor;
+			setSVSelectedPosition(x, y);
+			tempSVBitmap = makeSVBitmap(selectedHue);
+			selectedColor = getSelectedColor();
+			svBox.setImageBitmap(drawSelectionBoxOnSVBitmap(tempSVBitmap));
+			updatePreviewBox(selectedColor);
 		}
 	}
 
-	public void updateSVBitmap(int selectedColor) {
-		svBox.setImageBitmap(makeSVBitmap(selectedColor));
+	private Bitmap drawSelectionBoxOnSVBitmap(Bitmap svBitmap) {
+		Canvas canvas = new Canvas(svBitmap);
+		Paint paint = new Paint();
+		paint.setAntiAlias(true);
+		canvas.drawCircle(sv_x, sv_y, 10, paint);
+		return svBitmap;
+	}
+
+	private int getSelectedColor() {
+		return svBitmap.getPixel(sv_x, sv_y);
+	}
+
+	private void setSVSelectedPosition(int x, int y) {
+		sv_x = x;
+		sv_y = y;
+	}
+
+	private void updateSVBitmap() {
+		svBox.setImageBitmap(makeSVBitmap(selectedHue));
 	}
 	
 	public int getHueColor(){
@@ -184,12 +214,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 	public void updateHueBar(int x, int y) {
 		if(checkValidate(x, y, hueBitmap)){
 			Bitmap hueBitmap;
-			int selectedColor;
 			setHueSelectedPosition(x, y);
 			hueBitmap = makeHueBitmap();
-			selectedColor = getHueColor();
+			selectedHue = getHueColor();
 			hueBar.setImageBitmap(drawSelectionBoxOnHueBitmap(hueBitmap));
-			updateSVBitmap(selectedColor);
+			updateSVBitmap();
 		}
 	}
 
@@ -204,12 +233,6 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private void setHueSelectedPosition(int x, int y) {
 		hue_x = x;
 		hue_y = y;
-	}
-
-	@Override
-	public void updateSelectionMark(int x, int y) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
