@@ -1,5 +1,7 @@
 package com.example.colorpicker.test;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.example.colorpicker.MainActivity;
@@ -43,4 +45,11 @@ public class MainActivityTest extends
 		assertEquals(R.id.HueBar, solo.getView(R.id.HueBar).getId());
 	}
 
+	public void testSetInitialColor(){
+		ColorDrawable colorDrawable;
+		solo.clickOnButton(0);
+		colorDrawable = (ColorDrawable)solo.getView(R.id.previewBox).getBackground();
+		assertEquals(Color.rgb(55, 128, 128), colorDrawable.getColor(), 10);
+	}
+	
 }
