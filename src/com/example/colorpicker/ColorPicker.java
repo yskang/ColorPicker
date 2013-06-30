@@ -18,6 +18,8 @@ import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -53,27 +55,38 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private Shader shaderValue;
 	private int selectedColor;
 	private View view;
+	private Button presetColorButton1;
+	private Button presetColorButton2;
+	private Button presetColorButton3;
+	private Button presetColorButton4;
+	private ArrayList<Integer> presetColors;
 	
-	public ColorPicker(Context context, int initialColor, View viewForUpdate, ArrayList<Integer> presetColors) {
+	public ColorPicker(Context context, int initialColor, View viewForUpdate, ArrayList<Integer> presetColors){
 		this.context = context;
 		this.view = viewForUpdate;
+		this.presetColors = presetColors;
 
 		displaySize = new DisplaySize(context);
+		initViewSize();
 		makeView(context);
-		getInitialColorPosition(initialColor);
 		initPaints();
 		setViews();
-		updateHueBar(hue_x, hue_y);
-		initSelectedColor(initialColor);
+		updatePresetColor(initialColor);
 		initPresetColors(presetColors);
 		makeDialog();
+		initPresetColorButtons();
 	}
 	
 	private void initPresetColors(ArrayList<Integer> presetColors) {
-		colorPickerView.findViewById(R.id.presetButton_1).setBackgroundColor(presetColors.get(0));
-		colorPickerView.findViewById(R.id.presetButton_2).setBackgroundColor(presetColors.get(1));
-		colorPickerView.findViewById(R.id.presetButton_3).setBackgroundColor(presetColors.get(2));
-		colorPickerView.findViewById(R.id.presetButton_4).setBackgroundColor(presetColors.get(3));
+		presetColorButton1 = (Button) colorPickerView.findViewById(R.id.presetButton_1);
+		presetColorButton2 = (Button) colorPickerView.findViewById(R.id.presetButton_2);
+		presetColorButton3 = (Button) colorPickerView.findViewById(R.id.presetButton_3);
+		presetColorButton4 = (Button) colorPickerView.findViewById(R.id.presetButton_4);
+		
+		presetColorButton1.setBackgroundColor(presetColors.get(0));
+		presetColorButton2.setBackgroundColor(presetColors.get(1));
+		presetColorButton3.setBackgroundColor(presetColors.get(2));
+		presetColorButton4.setBackgroundColor(presetColors.get(3));
 	}
 
 	private void initSelectedColor(int initialColor) {
@@ -113,17 +126,19 @@ public class ColorPicker implements OnUpdateColorPicker{
 		float[] hsv = new float[3];
 		Color.colorToHSV(color, hsv);
 		selectedHue = color;
-		
-		hueWidth = (int)(displaySize.getDisplayWidthInPixel()*WIDTH_RATIO);
-		hueHeight = (int)(displaySize.getDisplayHeightInPixel() * HUE_HEIGHT_RATIO);
-		svWidth = hueWidth;
-		svHeight = (int)(displaySize.getDisplayWidthInPixel()*SV_HEIGHT_RATIO);
-		
+				
 		hue_x = (int)(hsv[0]*(hueWidth-1)/360);
 		hue_y = (int)(0.5 * (hueHeight-1));
 
 		sv_x = (int)(hsv[1] * (svWidth-1));
 		sv_y = (int)((svHeight-1) - hsv[2] * (svHeight-1));
+	}
+
+	private void initViewSize() {
+		hueWidth = (int)(displaySize.getDisplayWidthInPixel()*WIDTH_RATIO);
+		hueHeight = (int)(displaySize.getDisplayHeightInPixel() * HUE_HEIGHT_RATIO);
+		svWidth = hueWidth;
+		svHeight = (int)(displaySize.getDisplayWidthInPixel()*SV_HEIGHT_RATIO);
 	}
 
 	private void setViews() {
@@ -147,6 +162,13 @@ public class ColorPicker implements OnUpdateColorPicker{
 		svBox.setOnTouchListener(new OnColorTouch(new OnSVPicker(this)));
 		
 		previewBox = (TextView) colorPickerView.findViewById(R.id.previewBox);
+	}
+
+	private void initPresetColorButtons() {
+		presetColorButton1.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(0)));
+		presetColorButton2.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(1)));
+		presetColorButton3.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(2)));
+		presetColorButton4.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(3)));
 	}
 
 	private void makeView(Context context) {
@@ -299,6 +321,13 @@ public class ColorPicker implements OnUpdateColorPicker{
 
 	public void onClickOk() {
 		view.setBackgroundColor(selectedColor);
+	}
+
+	@Override
+	public void updatePresetColor(int color) {
+		getInitialColorPosition(color);
+		updateHueBar(hue_x, hue_y);
+		initSelectedColor(color);
 	}
 
 }

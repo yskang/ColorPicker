@@ -88,8 +88,15 @@ public class MainActivityTest extends
 		assertEquals(Color.RED, presetButtonDrawable4.getColor());
 	}
 	
-	public void SelectedColorShouldUpdatedByPresetButton() throws Exception {
+	public void testSelectedColorShouldUpdatedByPresetButton() throws Exception {
 		solo.clickOnButton(0);
+		
+		solo.clickOnButton(3);
+
+		ColorDrawable previewViewDrawable;
+		previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
+		
+		assertEquals(Color.RED, previewViewDrawable.getColor());
 	}
 	
 }
