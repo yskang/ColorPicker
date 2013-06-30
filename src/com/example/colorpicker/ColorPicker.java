@@ -48,6 +48,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private Paint svPaint;
 	private Canvas svCanvas;
 	private Shader shaderValue;
+	private int selectedColor;
 	
 	public ColorPicker(Context context, int initialColor) {
 		this.context = context;
@@ -58,9 +59,15 @@ public class ColorPicker implements OnUpdateColorPicker{
 		initPaints();
 		setViews();
 		updateHueBar(hue_x, hue_y);
+		initSelectedColor(initialColor);
 		makeDialog();
 	}
 	
+	private void initSelectedColor(int initialColor) {
+		selectedColor = initialColor;
+		updatePreviewBox();
+	}
+
 	private void initPaints() {
 		paintBlack = new Paint();
 		paintWhite = new Paint();
@@ -205,8 +212,8 @@ public class ColorPicker implements OnUpdateColorPicker{
 		svCanvas.drawRect(0, 0, svWidth, svHeight, svPaint);
 	}
 
-	private void updatePreviewBox(int color) {
-		previewBox.setBackgroundColor(color);
+	private void updatePreviewBox() {
+		previewBox.setBackgroundColor(selectedColor);
 	}
 
 	private int getSelectedColor() {
@@ -243,12 +250,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 	@Override
 	public void updateSVBox(int x, int y) {
 		if(checkValidate(x, y, this.svBitmap)){
-			int selectedColor;
 			setSVSelectedPosition(x, y);
 			makeSVBitmap(selectedHue);
 			selectedColor = getSelectedColor();
 			svBox.setImageBitmap(drawSelectionBoxOnSVBitmap(svBitmap));
-			updatePreviewBox(selectedColor);
+			updatePreviewBox();
 		}
 	}
 	
