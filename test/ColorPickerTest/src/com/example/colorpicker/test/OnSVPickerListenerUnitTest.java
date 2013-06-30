@@ -3,8 +3,8 @@ package com.example.colorpicker.test;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 
-import com.example.colorpicker.OnSVPicker;
-import com.example.colorpicker.OnUpdateColorPicker;
+import com.yskang.colorpicker.OnSVPicker;
+import com.yskang.colorpicker.OnUpdateColorPicker;
 
 import junit.framework.TestCase;
 

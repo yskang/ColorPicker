@@ -1,4 +1,4 @@
-package com.example.colorpicker;
+package com.yskang.colorpicker;
 
 public class OnHuePicker implements OnColorPickerListener {
 

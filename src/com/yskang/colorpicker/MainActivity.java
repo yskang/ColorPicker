@@ -1,6 +1,8 @@
-package com.example.colorpicker;
+package com.yskang.colorpicker;
 
 import java.util.ArrayList;
+
+import com.example.colorpicker.R;
 
 import android.app.Activity;
 import android.graphics.Color;

@@ -1,4 +1,4 @@
-package com.example.colorpicker;
+package com.yskang.colorpicker;
 
 public interface OnUpdateColorPicker {
 	void updateHueBar(int x, int y);

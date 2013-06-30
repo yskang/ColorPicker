@@ -1,4 +1,4 @@
-package com.example.colorpicker;
+package com.yskang.colorpicker;
 
 import android.view.MotionEvent;
 import android.view.View;
