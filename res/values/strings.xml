@@ -9,5 +9,6 @@
     <string name="positive">OK</string>
     <string name="negative">Calcel</string>
     <string name="previewTitle">Preview Color</string>
+    <string name="presetColorsTitle">Preset Colors</string>
 
 </resources>

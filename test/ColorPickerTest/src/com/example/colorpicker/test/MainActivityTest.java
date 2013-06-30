@@ -13,7 +13,6 @@ public class MainActivityTest extends
 
 	public MainActivityTest() {
 		super(MainActivity.class);
-		// TODO Auto-generated constructor stub
 	}
 
 	private Solo solo;
@@ -65,10 +64,32 @@ public class MainActivityTest extends
 		ColorDrawable colorDrawable = (ColorDrawable)solo.getView(R.id.previewBox).getBackground();
 		int selectedColor = colorDrawable.getColor();
 		
-		solo.clickOnButton(1);
+		solo.clickOnButton(5);
 		colorDrawable = (ColorDrawable) solo.getView(R.id.startColorPicker_2).getBackground();
 		assertEquals(selectedColor, colorDrawable.getColor());
 	}
 	
+	public void testMainActivityCanInitialPresetColors() throws Exception {
+		ColorDrawable presetButtonDrawable1;
+		ColorDrawable presetButtonDrawable2;
+		ColorDrawable presetButtonDrawable3;
+		ColorDrawable presetButtonDrawable4;
+		
+		solo.clickOnButton(0);
+		
+		presetButtonDrawable1 = (ColorDrawable) solo.getView(R.id.presetButton_1).getBackground();
+		presetButtonDrawable2 = (ColorDrawable) solo.getView(R.id.presetButton_2).getBackground();
+		presetButtonDrawable3 = (ColorDrawable) solo.getView(R.id.presetButton_3).getBackground();
+		presetButtonDrawable4 = (ColorDrawable) solo.getView(R.id.presetButton_4).getBackground();
+		
+		assertEquals(Color.BLUE, presetButtonDrawable1.getColor());
+		assertEquals(Color.CYAN, presetButtonDrawable2.getColor());
+		assertEquals(Color.GREEN, presetButtonDrawable3.getColor());
+		assertEquals(Color.RED, presetButtonDrawable4.getColor());
+	}
+	
+	public void SelectedColorShouldUpdatedByPresetButton() throws Exception {
+		solo.clickOnButton(0);
+	}
 	
 }

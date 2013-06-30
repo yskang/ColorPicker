@@ -1,5 +1,7 @@
 package com.example.colorpicker;
 
+import java.util.ArrayList;
+
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
@@ -52,9 +54,9 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private int selectedColor;
 	private View view;
 	
-	public ColorPicker(Context context, int initialColor, View view) {
+	public ColorPicker(Context context, int initialColor, View viewForUpdate, ArrayList<Integer> presetColors) {
 		this.context = context;
-		this.view = view;
+		this.view = viewForUpdate;
 
 		displaySize = new DisplaySize(context);
 		makeView(context);
@@ -63,9 +65,17 @@ public class ColorPicker implements OnUpdateColorPicker{
 		setViews();
 		updateHueBar(hue_x, hue_y);
 		initSelectedColor(initialColor);
+		initPresetColors(presetColors);
 		makeDialog();
 	}
 	
+	private void initPresetColors(ArrayList<Integer> presetColors) {
+		colorPickerView.findViewById(R.id.presetButton_1).setBackgroundColor(presetColors.get(0));
+		colorPickerView.findViewById(R.id.presetButton_2).setBackgroundColor(presetColors.get(1));
+		colorPickerView.findViewById(R.id.presetButton_3).setBackgroundColor(presetColors.get(2));
+		colorPickerView.findViewById(R.id.presetButton_4).setBackgroundColor(presetColors.get(3));
+	}
+
 	private void initSelectedColor(int initialColor) {
 		selectedColor = initialColor;
 		updatePreviewBox();
