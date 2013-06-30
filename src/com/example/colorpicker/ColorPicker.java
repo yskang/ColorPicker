@@ -84,7 +84,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 				Bitmap.Config.ARGB_8888);
 		svCanvas.setBitmap(svBitmap);
 		
-		shaderValue = new LinearGradient(1, 1, 1, svHeight - 1, 0,
+		shaderValue = new LinearGradient(1, 1, 1, svHeight, 0,
 				Color.BLACK, TileMode.CLAMP);
 
 	}
@@ -99,19 +99,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 		svWidth = hueWidth;
 		svHeight = (int)(displaySize.getDisplayWidthInPixel()*SV_HEIGHT_RATIO);
 		
-		hue_x = (int)(hsv[0]*hueWidth/360);
-		hue_y = (int)(0.5 * hueHeight);
+		hue_x = (int)(hsv[0]*(hueWidth-1)/360);
+		hue_y = (int)(0.5 * (hueHeight-1));
 
-		sv_x = (int)(hsv[1] * svWidth);
-		sv_y = (int)(svHeight - hsv[2] * svHeight);
-		
-		if(hue_x == 0) hue_x = 1;
-		if(hue_x == hueWidth) hue_x = hueWidth - 1;
-		if(sv_x == 0) sv_x = 1;
-		if(sv_x == svWidth) sv_x = svWidth - 2;
-		if(sv_y == 0) sv_y = 1;
-		if(sv_y == svHeight) sv_y = svHeight - 2; 
-	
+		sv_x = (int)(hsv[1] * (svWidth-1));
+		sv_y = (int)((svHeight-1) - hsv[2] * (svHeight-1));
 	}
 
 	private void setViews() {
@@ -203,14 +195,14 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 
 	private void makeSVBitmap(int selectedColor) {
-		Shader shaderSaturation = new LinearGradient(1, 1, svWidth - 1, 1,
+		Shader shaderSaturation = new LinearGradient(1, 1, svWidth, 1,
 				Color.WHITE, selectedColor, TileMode.CLAMP);
 
 		ComposeShader shader = new ComposeShader(shaderSaturation, shaderValue,
 				PorterDuff.Mode.DARKEN);
 
 		svPaint.setShader(shader);
-		svCanvas.drawRect(1, 1, svWidth - 1, svHeight - 1, svPaint);
+		svCanvas.drawRect(0, 0, svWidth, svHeight, svPaint);
 	}
 
 	private void updatePreviewBox(int color) {
@@ -231,7 +223,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 	
 	private boolean checkValidate(int x, int y, Bitmap bitmap) {
-		if(x > 0 && x < bitmap.getWidth()-1 && y > 0 && y < bitmap.getHeight()-1){
+		if(x >= 0 && x <= bitmap.getWidth()-1 && y >= 0 && y <= bitmap.getHeight()-1){
 			return true;
 		}
 		return false;
