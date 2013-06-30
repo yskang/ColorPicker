@@ -15,6 +15,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -49,9 +50,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private Canvas svCanvas;
 	private Shader shaderValue;
 	private int selectedColor;
+	private View view;
 	
-	public ColorPicker(Context context, int initialColor) {
+	public ColorPicker(Context context, int initialColor, View view) {
 		this.context = context;
+		this.view = view;
 
 		displaySize = new DisplaySize(context);
 		makeView(context);
@@ -152,8 +155,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-
+						onClickOk();
 					}
 				});
 
@@ -283,6 +285,10 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private void setHueSelectedPosition(int x, int y) {
 		hue_x = x;
 		hue_y = y;
+	}
+
+	public void onClickOk() {
+		view.setBackgroundColor(selectedColor);
 	}
 
 }

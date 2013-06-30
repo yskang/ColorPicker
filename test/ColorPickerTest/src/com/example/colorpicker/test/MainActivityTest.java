@@ -59,7 +59,16 @@ public class MainActivityTest extends
 		assertEquals(Color.MAGENTA, colorDrawable.getColor());
 	}
 
-	
+	public void testSelectedColorShouldUpdateButtonColor() throws Exception {
+		solo.clickOnButton(1);
+		solo.clickOnView(solo.getView(R.id.SVBox));
+		ColorDrawable colorDrawable = (ColorDrawable)solo.getView(R.id.previewBox).getBackground();
+		int selectedColor = colorDrawable.getColor();
+		
+		solo.clickOnButton(1);
+		colorDrawable = (ColorDrawable) solo.getView(R.id.startColorPicker_2).getBackground();
+		assertEquals(selectedColor, colorDrawable.getColor());
+	}
 	
 	
 }

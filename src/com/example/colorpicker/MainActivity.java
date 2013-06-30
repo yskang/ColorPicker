@@ -22,13 +22,13 @@ public class MainActivity extends Activity{
 
 		startButton_1 = (Button) findViewById(R.id.startColorPicker_1);
 		startButton_1.setBackgroundColor(color_1);
-		colorPicker_1 = new ColorPicker(this, color_1);
+		colorPicker_1 = new ColorPicker(this, color_1, startButton_1);
 		startButton_1.setOnClickListener(new OnStartButton(colorPicker_1
 				.getDialog()));
 		
 		startButton_2 = (Button) findViewById(R.id.startColorPicker_2);
 		startButton_2.setBackgroundColor(color_2);
-		colorPicker_2 = new ColorPicker(this, color_2);
+		colorPicker_2 = new ColorPicker(this, color_2, startButton_2);
 		startButton_2.setOnClickListener(new OnStartButton(colorPicker_2
 				.getDialog()));
 	}
