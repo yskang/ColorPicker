@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.colorpicker.R;
+import com.yskang.colorpicker.R;
 
 public class ColorPicker implements OnUpdateColorPicker{
 

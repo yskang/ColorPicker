@@ -1,14 +1,16 @@
-package com.yskang.colorpicker;
+package com.yskang.colorpicker.example;
 
 import java.util.ArrayList;
-
-import com.example.colorpicker.R;
 
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Button;
+
+import com.yskang.colorpicker.example.R;
+import com.yskang.colorpicker.ColorPicker;
+import com.yskang.colorpicker.OnStartButton;
 
 public class MainActivity extends Activity{
 

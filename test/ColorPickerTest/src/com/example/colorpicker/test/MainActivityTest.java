@@ -4,9 +4,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.example.colorpicker.R;
+import com.yskang.colorpicker.example.MainActivity;
+import com.yskang.colorpicker.example.R;
 import com.jayway.android.robotium.solo.Solo;
-import com.yskang.colorpicker.MainActivity;
 
 public class MainActivityTest extends
 		ActivityInstrumentationTestCase2<MainActivity> {
