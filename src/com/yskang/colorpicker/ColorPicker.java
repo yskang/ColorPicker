@@ -61,10 +61,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private Button presetColorButton3;
 	private Button presetColorButton4;
 	private ArrayList<Integer> presetColors;
+	private OnColorSelectedListener onColorPickerSelectedListener;
 	
-	public ColorPicker(Context context, int initialColor, View viewForUpdate, ArrayList<Integer> presetColors){
+	public ColorPicker(Context context, int initialColor, OnColorSelectedListener onColorPickerSelectedListener, ArrayList<Integer> presetColors){
 		this.context = context;
-		this.view = viewForUpdate;
+		this.onColorPickerSelectedListener = onColorPickerSelectedListener;
 		this.presetColors = presetColors;
 
 		displaySize = new DisplaySize(context);
@@ -321,7 +322,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 
 	public void onClickOk() {
-		view.setBackgroundColor(selectedColor);
+		onColorPickerSelectedListener.onSelected(selectedColor);
 	}
 
 	@Override
