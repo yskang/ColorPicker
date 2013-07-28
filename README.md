@@ -10,7 +10,7 @@ This dialog can be initialized by specific color then the coursor also moved to 
 
 License
 =======
-
+<pre>
    Copyright [2013] [Kang, Yongsung]
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,4 +24,4 @@ License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
+</pre>
