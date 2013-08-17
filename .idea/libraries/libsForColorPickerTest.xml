@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="libsForColorPickerTest">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/test/ColorPickerTest/libs/jmock-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/test/ColorPickerTest/libs/hamcrest-all-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/test/ColorPickerTest/libs/robotium-solo-4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
