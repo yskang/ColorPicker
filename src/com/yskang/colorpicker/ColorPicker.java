@@ -60,8 +60,12 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private Button presetColorButton4;
 	private ArrayList<Integer> presetColors;
 	private OnColorSelectedListener onColorPickerSelectedListener;
-	
-	public ColorPicker(Context context, int initialColor, OnColorSelectedListener onColorPickerSelectedListener, ArrayList<Integer> presetColors){
+    private Paint paintBlackForHueMarker;
+    private Paint paintWhiteForHueMarker;
+    private Paint paintSelectedHueColorForHueMarker;
+    private float hueMarkerR;
+
+    public ColorPicker(Context context, int initialColor, OnColorSelectedListener onColorPickerSelectedListener, ArrayList<Integer> presetColors){
 		this.context = context;
 		this.onColorPickerSelectedListener = onColorPickerSelectedListener;
 		this.presetColors = presetColors;
@@ -109,7 +113,22 @@ public class ColorPicker implements OnUpdateColorPicker{
 		paintWhite.setStrokeWidth(1);
 		paintWhite.setStyle(Paint.Style.STROKE);
 
-		svPaint.setAntiAlias(true);
+        paintBlackForHueMarker = new Paint();
+        paintBlackForHueMarker.setColor(Color.BLACK);
+        paintBlackForHueMarker.setAntiAlias(true);
+        paintBlackForHueMarker.setStyle(Paint.Style.FILL);
+
+        paintWhiteForHueMarker = new Paint();
+        paintWhiteForHueMarker.setColor(Color.WHITE);
+        paintWhiteForHueMarker.setAntiAlias(true);
+        paintWhiteForHueMarker.setStyle(Paint.Style.FILL);
+
+        paintSelectedHueColorForHueMarker = new Paint();
+        paintSelectedHueColorForHueMarker.setColor(selectedHue);
+        paintSelectedHueColorForHueMarker.setAntiAlias(true);
+        paintSelectedHueColorForHueMarker.setStyle(Paint.Style.FILL);
+
+        svPaint.setAntiAlias(true);
 		
 		svCanvas = new Canvas();
 
@@ -139,6 +158,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 		hueHeight = (int)(displaySize.getDisplayHeightInPixel() * HEIGHT_RATIO);
 		svWidth = (int)(displaySize.getDisplayWidthInPixel() * SV_WIDTH_RATIO);
 		svHeight = hueHeight;
+        hueMarkerR = hueWidth/4;
 	}
 
 	private void setViews() {
@@ -224,12 +244,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 		float[] colors_position = { 0.0f, 0.17f, 0.34f, 0.51f, 0.68f, 0.85f,
 				1.0f };
 
-		LinearGradient shader = new LinearGradient((float) (hueWidth * 0.5), 0,
-                (float) (hueWidth * 0.5), hueHeight, colors, colors_position,
-				Shader.TileMode.CLAMP);
+		LinearGradient shader = new LinearGradient(hueWidth * 0.5f, hueMarkerR,
+                hueWidth * 0.5f, hueHeight-hueMarkerR, colors, colors_position, Shader.TileMode.CLAMP);
 		paint.setShader(shader);
 
-		canvas.drawRect(0, 0, hueWidth, hueHeight, paint);
+		canvas.drawRect(hueWidth*0.5f + hueWidth*0.1f, hueMarkerR, hueWidth - hueWidth*0.1f, hueHeight-hueMarkerR, paint);
 
 		return hueBitmap;
 	}
@@ -259,20 +278,18 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 
 	public int getHueColor(){
-		return hueBitmap.getPixel(hue_x, hue_y);
+		return hueBitmap.getPixel((int)(hueWidth*0.75f), hue_y);
 	}
 	
-	private boolean checkValidate(int x, int y, Bitmap bitmap) {
-		if(x >= 0 && x <= bitmap.getWidth()-1 && y >= 0 && y <= bitmap.getHeight()-1){
-			return true;
-		}
-		return false;
+	private boolean checkValidate(int x, int y, float left, float top, float right, float bottom) {
+        if(new RectF(left, top, right, bottom).contains(x, y)) return true;
+        return false;
 	}
 
 	
 	@Override
 	public void updateHueBar(int x, int y) {
-		if(checkValidate(x, y, hueBitmap)){
+        if(checkValidate(x, y, hueWidth*0.5f + hueWidth*0.1f, hueMarkerR, hueWidth - hueWidth*0.1f, hueHeight-hueMarkerR)){
 			setHueSelectedPosition(x, y);
 			selectedHue = getHueColor();
 			hueBar.setImageBitmap(drawSelectionMarkOnHueBitmap(hueBitmap));
@@ -282,7 +299,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 
 	@Override
 	public void updateSVBox(int x, int y) {
-		if(checkValidate(x, y, this.svBitmap)){
+		if(checkValidate(x, y, 0, 0, svWidth, svHeight)){
 			setSVSelectedPosition(x, y);
 			makeSVBitmap(selectedHue);
 			selectedColor = getSelectedColor();
@@ -295,36 +312,21 @@ public class ColorPicker implements OnUpdateColorPicker{
 		hueBitmapCopy = Bitmap.createBitmap(hueBitmap);
 		Canvas hueCanvas = new Canvas(hueBitmapCopy);
 
-        float r = hueWidth/4;
-
-        Paint paintBlackForHueMarker = new Paint();
-        paintBlackForHueMarker.setColor(Color.BLACK);
-        paintBlackForHueMarker.setAntiAlias(true);
-        paintBlackForHueMarker.setStyle(Paint.Style.FILL);
-
-        Paint paintWhiteForHueMarker = new Paint();
-        paintWhiteForHueMarker.setColor(Color.WHITE);
-        paintWhiteForHueMarker.setAntiAlias(true);
-        paintWhiteForHueMarker.setStyle(Paint.Style.FILL);
-
-        Paint paintSelectedHueColorForHueMarker = new Paint();
         paintSelectedHueColorForHueMarker.setColor(selectedHue);
-        paintSelectedHueColorForHueMarker.setAntiAlias(true);
-        paintSelectedHueColorForHueMarker.setStyle(Paint.Style.FILL);
 
-        RectF rectFillBlackOuter = new RectF(r+(0.5f*r), hue_y-5, hueBitmap.getWidth(), hue_y+5);
-        RectF rectFillWhite = new RectF(r+(0.5f*r), hue_y-4, hueBitmap.getWidth(), hue_y+4);
-        RectF rectFillBlackInner = new RectF(r+(0.5f*r), hue_y-3, hueBitmap.getWidth(), hue_y+3);
-        RectF rectFillSelectedHue = new RectF(r+(0.5f*r), hue_y-1, hueBitmap.getWidth(), hue_y+1);
+        RectF rectFillBlackOuter = new RectF(hueMarkerR +(0.5f* hueMarkerR), hue_y-5, hueBitmap.getWidth(), hue_y+5);
+        RectF rectFillWhite = new RectF(hueMarkerR +(0.5f* hueMarkerR), hue_y-4, hueBitmap.getWidth(), hue_y+4);
+        RectF rectFillBlackInner = new RectF(hueMarkerR +(0.5f* hueMarkerR), hue_y-3, hueBitmap.getWidth(), hue_y+3);
+        RectF rectFillSelectedHue = new RectF(hueMarkerR +(0.5f* hueMarkerR), hue_y-1, hueBitmap.getWidth(), hue_y+1);
 
-        hueCanvas.drawCircle(r, hue_y, r, paintBlackForHueMarker);
+        hueCanvas.drawCircle(hueMarkerR, hue_y, hueMarkerR, paintBlackForHueMarker);
         hueCanvas.drawRoundRect(rectFillBlackOuter, 10, 10, paintBlackForHueMarker);
-        hueCanvas.drawCircle(r, hue_y, r-2, paintWhiteForHueMarker);
+        hueCanvas.drawCircle(hueMarkerR, hue_y, hueMarkerR -2, paintWhiteForHueMarker);
         hueCanvas.drawRoundRect(rectFillWhite, 10, 10, paintWhiteForHueMarker);
-        hueCanvas.drawCircle(r, hue_y, r-4, paintBlackForHueMarker);
+        hueCanvas.drawCircle(hueMarkerR, hue_y, hueMarkerR -4, paintBlackForHueMarker);
         hueCanvas.drawRoundRect(rectFillBlackInner, 10, 10, paintBlackForHueMarker);
         hueCanvas.drawRoundRect(rectFillSelectedHue, 10, 10, paintSelectedHueColorForHueMarker);
-        hueCanvas.drawCircle(r, hue_y, r-6, paintSelectedHueColorForHueMarker);
+        hueCanvas.drawCircle(hueMarkerR, hue_y, hueMarkerR -6, paintSelectedHueColorForHueMarker);
 
 		return hueBitmapCopy;
 	}

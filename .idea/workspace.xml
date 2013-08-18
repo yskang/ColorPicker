@@ -79,12 +79,12 @@
       <file leaf-file-name="ColorPicker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="294" column="36" selection-start="8802" selection-end="8802" vertical-scroll-proportion="0.3789809" vertical-offset="4403" max-vertical-offset="5882">
+            <state line="230" column="0" selection-start="7457" selection-end="7457" vertical-scroll-proportion="-0.32643312" vertical-offset="3758" max-vertical-offset="5916">
               <folding>
-                <element signature="e#6087#6236#0" expanded="true" />
-                <element signature="e#6229#6230#0" expanded="true" />
-                <element signature="e#6291#6444#0" expanded="true" />
-                <element signature="e#6437#6438#0" expanded="true" />
+                <element signature="e#6972#7121#0" expanded="true" />
+                <element signature="e#7114#7115#0" expanded="true" />
+                <element signature="e#7176#7329#0" expanded="true" />
+                <element signature="e#7322#7323#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -622,14 +622,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/graphics/RectF.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="19" selection-start="1722" selection-end="1722" vertical-scroll-proportion="0.33333334" vertical-offset="674" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="36" selection-start="8802" selection-end="8802" vertical-scroll-proportion="0.3789809" vertical-offset="4403" max-vertical-offset="5882">
+        <state line="230" column="0" selection-start="7457" selection-end="7457" vertical-scroll-proportion="-0.32643312" vertical-offset="3758" max-vertical-offset="5916">
           <folding>
-            <element signature="e#6087#6236#0" expanded="true" />
-            <element signature="e#6229#6230#0" expanded="true" />
-            <element signature="e#6291#6444#0" expanded="true" />
-            <element signature="e#6437#6438#0" expanded="true" />
+            <element signature="e#6972#7121#0" expanded="true" />
+            <element signature="e#7114#7115#0" expanded="true" />
+            <element signature="e#7176#7329#0" expanded="true" />
+            <element signature="e#7322#7323#0" expanded="true" />
           </folding>
         </state>
       </provider>
