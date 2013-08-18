@@ -9,7 +9,6 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/SVBox"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
             android:text="@string/previewTitle"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -17,21 +16,18 @@
             android:id="@+id/previewBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/SVBox"
-            android:layout_alignTop="@id/previewTitle"
+            android:layout_below="@id/previewTitle"
+            android:layout_alignLeft="@id/SVBox"
             android:layout_alignRight="@+id/HueBar"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/previewTitle"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <ImageView
-            android:id="@+id/SVBox"
+            android:id="@id/SVBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:src="@drawable/ic_launcher"
-            android:layout_below="@id/previewTitle"
+            android:layout_below="@id/previewBox"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="5dp"/>
 
