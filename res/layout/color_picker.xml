@@ -9,18 +9,20 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/SVBox"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
             android:text="@string/previewTitle"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
 
     <TextView
             android:id="@+id/previewBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/SVBox"
-            android:layout_alignTop="@+id/previewTitle"
+            android:layout_above="@id/SVBox"
+            android:layout_alignTop="@id/previewTitle"
             android:layout_alignRight="@+id/HueBar"
+            android:layout_marginRight="5dp"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/previewTitle"
+            android:layout_toRightOf="@id/previewTitle"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <ImageView
@@ -29,34 +31,36 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:src="@drawable/ic_launcher"
-            android:layout_below="@+id/previewTitle"
-            android:layout_alignParentLeft="true"/>
+            android:layout_below="@id/previewTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"/>
 
     <ImageView
-            android:id="@+id/HueBar"
+            android:id="@id/HueBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_launcher"
-            android:layout_alignTop="@+id/SVBox"
-            android:layout_toRightOf="@+id/SVBox"/>
+            android:layout_alignTop="@id/SVBox"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
 
     <TextView
             android:id="@+id/presetColorsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/linearLayout1"
-            android:layout_alignRight="@+id/linearLayout1"
-            android:layout_below="@+id/HueBar"
+            android:layout_alignLeft="@id/SVBox"
+            android:layout_alignRight="@id/HueBar"
+            android:layout_below="@id/HueBar"
             android:text="@string/presetColorsTitle"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
 
 
     <LinearLayout
-            android:id="@+id/linearLayout1"
+            android:id="@+id/presetButtons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/SVBox"
-            android:layout_alignRight="@+id/SVBox"
+            android:layout_alignLeft="@id/SVBox"
+            android:layout_alignRight="@id/HueBar"
             android:layout_below="@+id/presetColorsTitle">
 
         <Button
@@ -93,11 +97,28 @@
     </LinearLayout>
 
     <TextView
-            android:id="@+id/textViewForBottomSpace"
-            android:layout_width="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/linearLayout1"
-            android:layout_below="@+id/linearLayout1"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/alpha_title"
+            android:id="@+id/alphaTitle"
+            android:layout_below="@+id/presetButtons"
+            android:layout_alignLeft="@id/SVBox"
+            android:layout_marginTop="10dp"/>
+    <SeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alphaSeekBar"
+            android:layout_below="@id/alphaTitle"
+            android:layout_alignLeft="@id/SVBox"
+            android:layout_alignRight="@id/HueBar"/>
+
+    <TextView
+            android:id="@+id/textViewForBottomSpace"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/SVBox"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_below="@+id/alphaSeekBar"/>
 
 </RelativeLayout>

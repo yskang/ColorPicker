@@ -10,5 +10,6 @@
     <string name="negative">Cancel</string>
     <string name="previewTitle">Preview</string>
     <string name="presetColorsTitle">Preset Colors</string>
+    <string name="alpha_title">Alpha</string>
 
 </resources>

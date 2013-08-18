@@ -46,7 +46,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private int hueHeight;
 	private int svWidth;
 	private int svHeight;
-    private final static float HEIGHT_RATIO = 0.4f;
+    private final static float HEIGHT_RATIO = 0.3f;
     private final static float HUE_WIDTH_RATIO = 0.2f;
     private final static float SV_WIDTH_RATIO = 0.6f;
 	private Paint svPaint;
@@ -285,32 +285,33 @@ public class ColorPicker implements OnUpdateColorPicker{
 	public int getHueColor(){
 		return hueBitmap.getPixel((int)(hueWidth*0.75f), hue_y);
 	}
-	
-	private boolean checkValidate(int x, int y, float left, float top, float right, float bottom) {
-        if(new RectF(left, top, right, bottom).contains(x, y)) return true;
-        return false;
-	}
 
-	
 	@Override
 	public void updateHueBar(int x, int y) {
-        if(checkValidate(x, y, hueWidth*0.5f + hueWidth*0.1f, selectionMarkerR, hueWidth - hueWidth*0.1f, hueHeight- selectionMarkerR)){
-			setHueSelectedPosition(x, y);
-			selectedHue = getHueColor();
-			hueBar.setImageBitmap(drawSelectionMarkOnHueBitmap(hueBitmap));
-			updateSVBox(sv_x, sv_y);
-		}
+        if(x < 0) x = 0;
+        if(x > hueWidth) x = (hueWidth - 1);
+        if(y < selectionMarkerR) y = (int) selectionMarkerR;
+        if(y > hueHeight - selectionMarkerR) y = (int) (hueHeight -selectionMarkerR -1);
+
+        setHueSelectedPosition(x, y);
+        selectedHue = getHueColor();
+        hueBar.setImageBitmap(drawSelectionMarkOnHueBitmap(hueBitmap));
+        updateSVBox(sv_x, sv_y);
 	}
 
 	@Override
 	public void updateSVBox(int x, int y) {
-		if(checkValidate(x, y, selectionMarkerR, selectionMarkerR, svWidth-selectionMarkerR, svHeight-selectionMarkerR)){
-			setSVSelectedPosition(x, y);
-			makeSVBitmap(selectedHue);
-			selectedColor = getSelectedColor();
-			svBox.setImageBitmap(drawSelectionMarkerOnSVBitmap(svBitmap));
-			updatePreviewBox();
-		}
+        if(x < selectionMarkerR) x = (int) selectionMarkerR;
+        if(x > svWidth-selectionMarkerR) x = (int) (svWidth - selectionMarkerR -1);
+        if(y < selectionMarkerR) y = (int) selectionMarkerR;
+        if(y > svHeight-selectionMarkerR ) y = (int) (svHeight - selectionMarkerR -1);
+
+        setSVSelectedPosition(x, y);
+        makeSVBitmap(selectedHue);
+        selectedColor = getSelectedColor();
+        svBox.setImageBitmap(drawSelectionMarkerOnSVBitmap(svBitmap));
+        updatePreviewBox();
+
 	}
 	
 	private Bitmap drawSelectionMarkOnHueBitmap(Bitmap hueBitmap) {
