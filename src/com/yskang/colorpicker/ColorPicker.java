@@ -1,7 +1,5 @@
 package com.yskang.colorpicker;
 
-import java.util.ArrayList;
-
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
@@ -21,9 +19,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.BitSet;
 
-public class ColorPicker implements OnUpdateColorPicker{
+import static android.widget.SeekBar.OnSeekBarChangeListener;
+
+
+public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener {
 
 	private Context context;
 	private AlertDialog dialog;
@@ -64,6 +68,8 @@ public class ColorPicker implements OnUpdateColorPicker{
     private Paint paintSelectedHueColorForHueMarker;
     private Paint paintSelectedColorForMarker;
     private float selectionMarkerR;
+    private SeekBar alphaSeekBar;
+    private int alpha = 255;
 
     public ColorPicker(Context context, int initialColor, OnColorSelectedListener onColorPickerSelectedListener, ArrayList<Integer> presetColors){
 		this.context = context;
@@ -180,7 +186,12 @@ public class ColorPicker implements OnUpdateColorPicker{
 		svBox.setOnTouchListener(new OnColorTouch(new OnSVPicker(this)));
 		
 		previewBox = (TextView) colorPickerView.findViewById(R.id.previewBox);
-	}
+
+        alphaSeekBar = (SeekBar) colorPickerView.findViewById(R.id.alphaSeekBar);
+        alphaSeekBar.setMax(255);
+        alphaSeekBar.setProgress(255);
+        alphaSeekBar.setOnSeekBarChangeListener(this);
+    }
 
 	private void initPresetColorButtons() {
 		presetColorButton1.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(0)));
@@ -270,6 +281,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 
 	private void updatePreviewBox() {
+        selectedColor = (selectedColor & 0x00FFFFFF) | (alpha<<24 );
 		previewBox.setBackgroundColor(selectedColor);
 	}
 
@@ -370,4 +382,19 @@ public class ColorPicker implements OnUpdateColorPicker{
 		initSelectedColor(color);
 	}
 
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+        alpha = i;
+        updatePreviewBox();
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
 }
