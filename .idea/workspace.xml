@@ -13,7 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e296828-61d8-4914-9d6f-1b24e35942ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ColorPicker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,8 +82,14 @@
       <file leaf-file-name="ColorPicker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="348" column="8" selection-start="11963" selection-end="11963" vertical-scroll-proportion="1.7885835" vertical-offset="4509" max-vertical-offset="5882">
-              <folding />
+            <state line="347" column="73" selection-start="11967" selection-end="11967" vertical-scroll-proportion="0.529595" vertical-offset="5559" max-vertical-offset="6443">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7184#7333#0" expanded="true" />
+                <element signature="e#7326#7327#0" expanded="true" />
+                <element signature="e#7388#7541#0" expanded="true" />
+                <element signature="e#7534#7535#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -504,8 +509,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.53347504" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46652496" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.7130712" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2869288" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -557,7 +562,13 @@
     <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="361" column="0" selection-start="11925" selection-end="11925" vertical-scroll-proportion="0.0" vertical-offset="5763" max-vertical-offset="5916">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7184#7333#0" expanded="true" />
+            <element signature="e#7326#7327#0" expanded="true" />
+            <element signature="e#7388#7541#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -661,8 +672,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="348" column="8" selection-start="11963" selection-end="11963" vertical-scroll-proportion="1.7885835" vertical-offset="4509" max-vertical-offset="5882">
-          <folding />
+        <state line="347" column="73" selection-start="11967" selection-end="11967" vertical-scroll-proportion="0.529595" vertical-offset="5559" max-vertical-offset="6443">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7184#7333#0" expanded="true" />
+            <element signature="e#7326#7327#0" expanded="true" />
+            <element signature="e#7388#7541#0" expanded="true" />
+            <element signature="e#7534#7535#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
