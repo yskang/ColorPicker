@@ -63,6 +63,7 @@ public class ColorPicker implements OnUpdateColorPicker{
     private Paint paintBlackForHueMarker;
     private Paint paintWhiteForHueMarker;
     private Paint paintSelectedHueColorForHueMarker;
+    private Paint paintSelectedColorForMarker;
     private float hueMarkerR;
 
     public ColorPicker(Context context, int initialColor, OnColorSelectedListener onColorPickerSelectedListener, ArrayList<Integer> presetColors){
@@ -127,6 +128,11 @@ public class ColorPicker implements OnUpdateColorPicker{
         paintSelectedHueColorForHueMarker.setColor(selectedHue);
         paintSelectedHueColorForHueMarker.setAntiAlias(true);
         paintSelectedHueColorForHueMarker.setStyle(Paint.Style.FILL);
+
+        paintSelectedColorForMarker = new Paint();
+        paintSelectedColorForMarker.setColor(selectedColor);
+        paintSelectedColorForMarker.setAntiAlias(true);
+        paintSelectedColorForMarker.setStyle(Paint.Style.FILL);
 
         svPaint.setAntiAlias(true);
 		
@@ -334,9 +340,13 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private Bitmap drawSelectionBoxOnSVBitmap(Bitmap svBitmap) {
 		Canvas canvas = new Canvas(svBitmap);
 
-		canvas.drawCircle(sv_x, sv_y, 10, paintBlack);
-		canvas.drawCircle(sv_x, sv_y, 9, paintWhite);
-		canvas.drawCircle(sv_x, sv_y, 12, paintWhite);
+        paintSelectedColorForMarker.setColor(selectedColor);
+
+		canvas.drawCircle(sv_x, sv_y, hueMarkerR, paintBlackForHueMarker);
+		canvas.drawCircle(sv_x, sv_y, hueMarkerR-2, paintWhiteForHueMarker);
+		canvas.drawCircle(sv_x, sv_y, hueMarkerR-4, paintBlackForHueMarker);
+        canvas.drawCircle(sv_x, sv_y, hueMarkerR-6, paintSelectedColorForMarker);
+        
 		return svBitmap;
 	}
 	
