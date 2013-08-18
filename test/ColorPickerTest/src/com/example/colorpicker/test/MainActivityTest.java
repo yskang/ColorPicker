@@ -98,5 +98,9 @@ public class MainActivityTest extends
 		
 		assertEquals(Color.RED, previewViewDrawable.getColor());
 	}
-	
+
+    public void test() throws Exception {
+
+
+    }
 }

@@ -23,8 +23,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.yskang.colorpicker.R;
-
 public class ColorPicker implements OnUpdateColorPicker{
 
 	private Context context;
@@ -48,9 +46,9 @@ public class ColorPicker implements OnUpdateColorPicker{
 	private int hueHeight;
 	private int svWidth;
 	private int svHeight;
-	private final static float WIDTH_RATIO = 0.8f;
-	private final static float HUE_HEIGHT_RATIO = 0.05f;
-	private final static float SV_HEIGHT_RATIO = 0.6f;
+    private final static float HEIGHT_RATIO = 0.4f;
+    private final static float HUE_WIDTH_RATIO = 0.1f;
+    private final static float SV_WIDTH_RATIO = 0.7f;
 	private Paint svPaint;
 	private Canvas svCanvas;
 	private Shader shaderValue;
@@ -128,19 +126,19 @@ public class ColorPicker implements OnUpdateColorPicker{
 		float[] hsv = new float[3];
 		Color.colorToHSV(color, hsv);
 		selectedHue = color;
-				
-		hue_x = (int)(hsv[0]*(hueWidth-1)/360);
-		hue_y = (int)(0.5 * (hueHeight-1));
+
+        hue_x = (int)(0.5 * (hueWidth-1));
+        hue_y = (int)(hsv[0] * (hueHeight-1)/360);
 
 		sv_x = (int)(hsv[1] * (svWidth-1));
 		sv_y = (int)((svHeight-1) - hsv[2] * (svHeight-1));
 	}
 
 	private void initViewSize() {
-		hueWidth = (int)(displaySize.getDisplayWidthInPixel()*WIDTH_RATIO);
-		hueHeight = (int)(displaySize.getDisplayHeightInPixel() * HUE_HEIGHT_RATIO);
-		svWidth = hueWidth;
-		svHeight = (int)(displaySize.getDisplayWidthInPixel()*SV_HEIGHT_RATIO);
+		hueWidth = (int)(displaySize.getDisplayWidthInPixel() * HUE_WIDTH_RATIO);
+		hueHeight = (int)(displaySize.getDisplayHeightInPixel() * HEIGHT_RATIO);
+		svWidth = (int)(displaySize.getDisplayWidthInPixel() * SV_WIDTH_RATIO);
+		svHeight = hueHeight;
 	}
 
 	private void setViews() {
@@ -198,8 +196,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-
+						onClickCancel();
 					}
 				});
 
@@ -227,8 +224,8 @@ public class ColorPicker implements OnUpdateColorPicker{
 		float[] colors_position = { 0.0f, 0.17f, 0.34f, 0.51f, 0.68f, 0.85f,
 				1.0f };
 
-		LinearGradient shader = new LinearGradient(0, (float) (hueHeight * 0.5),
-				hueWidth, (float) (hueHeight * 0.5), colors, colors_position,
+		LinearGradient shader = new LinearGradient((float) (hueWidth * 0.5), 0,
+                (float) (hueWidth * 0.5), hueHeight, colors, colors_position,
 				Shader.TileMode.CLAMP);
 		paint.setShader(shader);
 
@@ -298,9 +295,9 @@ public class ColorPicker implements OnUpdateColorPicker{
 		hueBitmapCopy = Bitmap.createBitmap(hueBitmap);
 		Canvas hueCanvas = new Canvas(hueBitmapCopy);
 		
-		RectF rectBlack = new RectF((int)(hue_x-5), 0.f, (int)(hue_x+5), (int)hueBitmap.getHeight());
-		RectF rectWhite = new RectF((int)(hue_x-4), 1.f, (int)(hue_x+6), (int)hueBitmap.getHeight());
-		
+		RectF rectBlack = new RectF(0.f, hue_y-5, hueBitmap.getWidth(), hue_y+5);
+		RectF rectWhite = new RectF(0.f, hue_y-4, hueBitmap.getWidth(), hue_y+6);
+
 		hueCanvas.drawRoundRect(rectWhite, 10, 10, paintWhite);
 		hueCanvas.drawRoundRect(rectBlack, 10, 10, paintBlack);
 
@@ -325,7 +322,11 @@ public class ColorPicker implements OnUpdateColorPicker{
 		onColorPickerSelectedListener.onSelected(selectedColor);
 	}
 
-	@Override
+    private void onClickCancel() {
+        //TODO : add something to do when close color picker popup
+    }
+
+    @Override
 	public void updatePresetColor(int color) {
 		getInitialColorPosition(color);
 		updateHueBar(hue_x, hue_y);
