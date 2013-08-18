@@ -50,7 +50,6 @@ public class ColorPicker implements OnUpdateColorPicker{
     private final static float HUE_WIDTH_RATIO = 0.2f;
     private final static float SV_WIDTH_RATIO = 0.6f;
 	private Paint svPaint;
-	private Canvas svCanvas;
 	private Shader shaderValue;
 	private int selectedColor;
 	private View view;
@@ -136,15 +135,8 @@ public class ColorPicker implements OnUpdateColorPicker{
 
         svPaint.setAntiAlias(true);
 		
-		svCanvas = new Canvas();
-
-		svBitmap = Bitmap.createBitmap(svWidth, svHeight,
-				Bitmap.Config.ARGB_8888);
-		svCanvas.setBitmap(svBitmap);
-		
-		shaderValue = new LinearGradient(1, 1, 1, svHeight, 0,
-				Color.BLACK, TileMode.CLAMP);
-
+        shaderValue = new LinearGradient(0, selectionMarkerR, 0, svHeight - selectionMarkerR, Color.TRANSPARENT,
+                Color.BLACK, TileMode.CLAMP);
 	}
 
 	private void getInitialColorPosition(int color) {
@@ -260,14 +252,21 @@ public class ColorPicker implements OnUpdateColorPicker{
 	}
 
 	private void makeSVBitmap(int selectedColor) {
-		Shader shaderSaturation = new LinearGradient(1, 1, svWidth, 1,
+        Canvas svCanvas = new Canvas();
+
+        svBitmap = Bitmap.createBitmap(svWidth, svHeight,
+                Bitmap.Config.ARGB_8888);
+        svCanvas.setBitmap(svBitmap);
+
+		Shader shaderSaturation = new LinearGradient(selectionMarkerR, 0, svWidth-selectionMarkerR, 0,
 				Color.WHITE, selectedColor, TileMode.CLAMP);
 
-		ComposeShader shader = new ComposeShader(shaderSaturation, shaderValue,
+        ComposeShader shader = new ComposeShader(shaderSaturation, shaderValue,
 				PorterDuff.Mode.DARKEN);
 
 		svPaint.setShader(shader);
-		svCanvas.drawRect(0, 0, svWidth, svHeight, svPaint);
+
+		svCanvas.drawRect(selectionMarkerR, selectionMarkerR, svWidth-selectionMarkerR, svHeight-selectionMarkerR, svPaint);
 	}
 
 	private void updatePreviewBox() {
@@ -305,7 +304,7 @@ public class ColorPicker implements OnUpdateColorPicker{
 
 	@Override
 	public void updateSVBox(int x, int y) {
-		if(checkValidate(x, y, 0, 0, svWidth, svHeight)){
+		if(checkValidate(x, y, selectionMarkerR, selectionMarkerR, svWidth-selectionMarkerR, svHeight-selectionMarkerR)){
 			setSVSelectedPosition(x, y);
 			makeSVBitmap(selectedHue);
 			selectedColor = getSelectedColor();
