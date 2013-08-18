@@ -90,7 +90,6 @@ public class MainActivityTest extends
 	
 	public void testSelectedColorShouldUpdatedByPresetButton() throws Exception {
 		solo.clickOnButton(0);
-		
 		solo.clickOnButton(3);
 
 		ColorDrawable previewViewDrawable;
@@ -99,8 +98,15 @@ public class MainActivityTest extends
 		assertEquals(Color.RED, previewViewDrawable.getColor());
 	}
 
-    public void test() throws Exception {
+    public void testAlhpaSetting() throws Exception {
+        solo.clickOnButton(0);
+        solo.clickOnButton(3);
 
+        solo.setProgressBar(0,50);
 
+        ColorDrawable previewViewDrawable;
+        previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
+
+        assertEquals(Color.argb(50,255,0,0),previewViewDrawable.getColor());
     }
 }
