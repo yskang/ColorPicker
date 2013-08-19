@@ -384,11 +384,12 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 	}
 
     private void getInitialTPColor(int color) {
-        alpha = (color & 0xFF000000) >> 24;
+        alpha = (color & 0xFF000000) >>> 24;
+        alphaSeekBar.setProgress(alpha);
     }
 
     @Override
-    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+    public void onProgressChanged(SeekBar seekBar, int i, boolean isFromUser) {
         alpha = i;
         updatePreviewBox();
     }

@@ -102,7 +102,6 @@ public class MainActivityTest extends
     public void testAlphaSetting() throws Exception {
         solo.clickOnButton(0);
         solo.clickOnButton(3);
-
         solo.setProgressBar(0,50);
 
         ColorDrawable previewViewDrawable;
