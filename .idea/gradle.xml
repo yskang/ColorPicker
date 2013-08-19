@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="C:\Users\yongsung.kang.LGE\Downloads\gradle-1.7-all\gradle-1.7" />
+        <option name="preferLocalInstallationToWrapper" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/example/ColorPickerExample" />
+        <option name="gradleHome" value="C:\Users\yongsung.kang.LGE\devTools\gradle\gradle-1.7" />
+        <option name="preferLocalInstallationToWrapper" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test/ColorPickerTest" />
+        <option name="gradleHome" value="C:\Users\yongsung.kang.LGE\devTools\gradle\gradle-1.7" />
+        <option name="preferLocalInstallationToWrapper" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
+

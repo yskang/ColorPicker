@@ -98,7 +98,7 @@ public class MainActivityTest extends
 		assertEquals(Color.RED, previewViewDrawable.getColor());
 	}
 
-    public void testAlhpaSetting() throws Exception {
+    public void testAlphaSetting() throws Exception {
         solo.clickOnButton(0);
         solo.clickOnButton(3);
 
@@ -108,5 +108,19 @@ public class MainActivityTest extends
         previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
 
         assertEquals(Color.argb(50,255,0,0),previewViewDrawable.getColor());
+    }
+
+
+    public void testSelectedColorTpValueShouldUpdatedByPresetButton() throws Exception {
+        solo.clickOnButton(0);
+
+        solo.setProgressBar(0, 30);
+
+        solo.clickOnButton(3);
+
+        ColorDrawable previewViewDrawable;
+        previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
+
+        assertEquals(Color.argb(255, 255, 0, 0), previewViewDrawable.getColor());
     }
 }
