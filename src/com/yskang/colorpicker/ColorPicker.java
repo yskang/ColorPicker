@@ -378,9 +378,14 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
     @Override
 	public void updatePresetColor(int color) {
 		getInitialColorPosition(color);
+        getInitialTPColor(color);
 		updateHueBar(hue_x, hue_y);
 		initSelectedColor(color);
 	}
+
+    private void getInitialTPColor(int color) {
+        alpha = (color & 0xFF000000) >> 24;
+    }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {

@@ -3,6 +3,7 @@ package com.example.colorpicker.test;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.SeekBar;
 
 import com.yskang.colorpicker.example.MainActivity;
 import com.yskang.colorpicker.example.R;
@@ -122,5 +123,6 @@ public class MainActivityTest extends
         previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
 
         assertEquals(Color.argb(255, 255, 0, 0), previewViewDrawable.getColor());
+        assertEquals(255, ((SeekBar) solo.getView(R.id.alphaSeekBar)).getProgress());
     }
 }
