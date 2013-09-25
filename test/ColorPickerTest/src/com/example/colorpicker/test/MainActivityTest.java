@@ -5,9 +5,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.SeekBar;
 
+import com.jayway.android.robotium.solo.Solo;
 import com.yskang.colorpicker.example.MainActivity;
 import com.yskang.colorpicker.example.R;
-import com.jayway.android.robotium.solo.Solo;
 
 public class MainActivityTest extends
 		ActivityInstrumentationTestCase2<MainActivity> {
@@ -37,7 +37,7 @@ public class MainActivityTest extends
 	
 	public void testStartButtonCanStartNewDialog(){
 		solo.clickOnButton(0);
-		assertEquals("Failed to open dialog","ColorPicker", solo.getText(0).getText());
+		assertEquals("Failed to open dialog", solo.getString(com.yskang.colorpicker.R.string.previewTitle), solo.getText(0).getText());
 	}
 	
 	public void testIsTheHueBar(){
