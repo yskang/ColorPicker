@@ -1,14 +1,15 @@
 package com.yskang.colorpicker;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 public class OnStartButton implements OnClickListener {
 
-	private AlertDialog dialog;
+	private Dialog dialog;
 
-	public OnStartButton(AlertDialog dialog) {
+	public OnStartButton(Dialog dialog) {
 		this.dialog = dialog;
 	}
 	

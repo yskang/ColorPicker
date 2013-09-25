@@ -8,7 +8,7 @@
     <string name="dialogTitle">ColorPicker</string>
     <string name="positive">OK</string>
     <string name="negative">Cancel</string>
-    <string name="previewTitle">Preview</string>
+    <string name="previewTitle">Color Preview (New|Old)</string>
     <string name="presetColorsTitle">Preset Colors</string>
     <string name="alpha_title">Alpha</string>
 

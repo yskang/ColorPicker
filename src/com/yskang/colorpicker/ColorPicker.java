@@ -1,7 +1,9 @@
 package com.yskang.colorpicker;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -14,8 +16,11 @@ import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -30,7 +35,7 @@ import static android.widget.SeekBar.OnSeekBarChangeListener;
 public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener {
 
 	private Context context;
-	private AlertDialog dialog;
+	private Dialog dialog;
 	private RelativeLayout colorPickerView;
 	private DisplaySize displaySize;
 	private Bitmap hueBitmap;
@@ -83,11 +88,16 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 		setViews();
 		updatePresetColor(initialColor);
 		initPresetColors(presetColors);
+        initOldColorBox(initialColor);
 		makeDialog();
 		initPresetColorButtons();
 	}
-	
-	private void initPresetColors(ArrayList<Integer> presetColors) {
+
+    private void initOldColorBox(int initialColor) {
+        colorPickerView.findViewById(R.id.oldColorBox).setBackgroundColor(initialColor);
+    }
+
+    private void initPresetColors(ArrayList<Integer> presetColors) {
 		presetColorButton1 = (Button) colorPickerView.findViewById(R.id.presetButton_1);
 		presetColorButton2 = (Button) colorPickerView.findViewById(R.id.presetButton_2);
 		presetColorButton3 = (Button) colorPickerView.findViewById(R.id.presetButton_3);
@@ -162,7 +172,8 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 		hueHeight = (int)(displaySize.getDisplayHeightInPixel() * HEIGHT_RATIO);
 		svWidth = (int)(displaySize.getDisplayWidthInPixel() * SV_WIDTH_RATIO);
 		svHeight = hueHeight;
-        selectionMarkerR = hueWidth/4;
+
+        selectionMarkerR = displaySize.getPixel(15);
 	}
 
 	private void setViews() {
@@ -209,7 +220,6 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 
 	private void makeDialog() {
 		Builder builder = new AlertDialog.Builder(context);
-		builder.setTitle(R.string.dialogTitle);
 
 		builder.setPositiveButton(R.string.positive,
 				new DialogInterface.OnClickListener() {
@@ -234,7 +244,7 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 		dialog = builder.create();
 	}
 
-	public AlertDialog getDialog() {
+	public Dialog getDialog() {
 		return dialog;
 	}
 
@@ -311,7 +321,7 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
         updateSVBox(sv_x, sv_y);
 	}
 
-	@Override
+    @Override
 	public void updateSVBox(int x, int y) {
         if(x < selectionMarkerR) x = (int) selectionMarkerR;
         if(x > svWidth-selectionMarkerR) x = (int) (svWidth - selectionMarkerR -1);
@@ -323,7 +333,6 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
         selectedColor = getSelectedColor();
         svBox.setImageBitmap(drawSelectionMarkerOnSVBitmap(svBitmap));
         updatePreviewBox();
-
 	}
 	
 	private Bitmap drawSelectionMarkOnHueBitmap(Bitmap hueBitmap) {

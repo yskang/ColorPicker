@@ -1,120 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
-            android:id="@+id/previewTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/SVBox"
-            android:layout_marginTop="10dp"
-            android:text="@string/previewTitle"
-            android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-    <TextView
-            android:id="@+id/previewBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/previewTitle"
-            android:layout_alignLeft="@id/SVBox"
-            android:layout_alignRight="@+id/HueBar"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:id="@+id/previewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SVBox"
+        android:layout_marginTop="10dp"
+        android:text="@string/previewTitle"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <ImageView
-            android:id="@id/SVBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_launcher"
-            android:layout_below="@id/previewBox"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dp"/>
+        android:id="@id/SVBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/previewTitle"
+        android:layout_marginTop="10dp" />
 
     <ImageView
-            android:id="@id/HueBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
-            android:layout_alignTop="@id/SVBox"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"/>
+        android:id="@+id/HueBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        android:layout_below="@+id/previewBoxLayout"
+        android:layout_alignRight="@+id/previewBoxLayout"
+        android:layout_marginTop="10dp" />
 
     <TextView
-            android:id="@+id/presetColorsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/SVBox"
-            android:layout_alignRight="@id/HueBar"
-            android:layout_below="@id/HueBar"
-            android:text="@string/presetColorsTitle"
-            android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:id="@+id/presetColorsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/SVBox"
+        android:layout_alignRight="@id/HueBar"
+        android:layout_below="@id/HueBar"
+        android:text="@string/presetColorsTitle"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 
     <LinearLayout
-            android:id="@+id/presetButtons"
+        android:id="@+id/presetButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/SVBox"
+        android:layout_alignRight="@id/HueBar"
+        android:layout_below="@+id/presetColorsTitle"
+        android:layout_marginTop="2dp">
+
+        <Button
+            android:id="@+id/presetButton_1"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/SVBox"
-            android:layout_alignRight="@id/HueBar"
-            android:layout_below="@+id/presetColorsTitle">
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text=""
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
 
         <Button
-                android:id="@+id/presetButton_1"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:text=""/>
+            android:id="@+id/presetButton_2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text=""
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
 
         <Button
-                android:id="@+id/presetButton_2"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:text=""/>
+            android:id="@+id/presetButton_3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text=""
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
 
         <Button
-                android:id="@+id/presetButton_3"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:text=""/>
-
-        <Button
-                android:id="@+id/presetButton_4"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_weight="1"
-                android:text=""/>
+            android:id="@+id/presetButton_4"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text=""
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
     </LinearLayout>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/alpha_title"
-            android:id="@+id/alphaTitle"
-            android:layout_below="@+id/presetButtons"
-            android:layout_alignLeft="@id/SVBox"
-            android:layout_marginTop="10dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/alpha_title"
+        android:id="@+id/alphaTitle"
+        android:layout_below="@+id/presetButtons"
+        android:layout_alignLeft="@id/SVBox"
+        android:layout_marginTop="10dp" />
+
     <SeekBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/alphaSeekBar"
-            android:layout_below="@id/alphaTitle"
-            android:layout_alignLeft="@id/SVBox"
-            android:layout_alignRight="@id/HueBar"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/alphaSeekBar"
+        android:layout_below="@id/alphaTitle"
+        android:layout_alignLeft="@id/SVBox"
+        android:layout_alignRight="@id/HueBar" />
 
     <TextView
-            android:id="@+id/textViewForBottomSpace"
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@id/SVBox"
+        android:id="@+id/textViewForBottomSpace"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/SVBox"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/alphaSeekBar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_toRightOf="@+id/previewTitle"
+        android:id="@+id/previewBoxLayout"
+        android:layout_alignBottom="@+id/previewTitle"
+        android:layout_alignTop="@+id/previewTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/previewBox"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_below="@+id/alphaSeekBar"/>
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/oldColorBox"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </RelativeLayout>
