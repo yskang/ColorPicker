@@ -30,6 +30,7 @@ public class OnColorSelectedListenerTest extends
 		presetColors.add(Color.BLUE);
 		presetColors.add(Color.BLUE);
 		presetColors.add(Color.BLUE);
+		presetColors.add(Color.BLUE);
 		colorPicker = new ColorPicker(getActivity(), Color.WHITE,
 				onColorSelectedListener, presetColors);
 		super.setUp();

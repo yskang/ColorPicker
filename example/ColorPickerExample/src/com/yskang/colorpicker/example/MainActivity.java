@@ -32,7 +32,8 @@ public class MainActivity extends Activity {
 		presetColors.add(Color.CYAN);
 		presetColors.add(Color.GREEN);
 		presetColors.add(Color.RED);
-		
+		presetColors.add(Color.RED);
+
 		
 		startButton_1 = (Button) findViewById(R.id.startColorPicker_1);
 		startButton_1.setBackgroundColor(color_1);

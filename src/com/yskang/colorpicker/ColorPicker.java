@@ -66,6 +66,7 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 	private Button presetColorButton2;
 	private Button presetColorButton3;
 	private Button presetColorButton4;
+	private Button presetColorButton5;
 	private ArrayList<Integer> presetColors;
 	private OnColorSelectedListener onColorPickerSelectedListener;
     private Paint paintBlackFill;
@@ -102,11 +103,13 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 		presetColorButton2 = (Button) colorPickerView.findViewById(R.id.presetButton_2);
 		presetColorButton3 = (Button) colorPickerView.findViewById(R.id.presetButton_3);
 		presetColorButton4 = (Button) colorPickerView.findViewById(R.id.presetButton_4);
-		
+		presetColorButton5 = (Button) colorPickerView.findViewById(R.id.presetButton_5);
+
 		presetColorButton1.setBackgroundColor(presetColors.get(0));
 		presetColorButton2.setBackgroundColor(presetColors.get(1));
 		presetColorButton3.setBackgroundColor(presetColors.get(2));
 		presetColorButton4.setBackgroundColor(presetColors.get(3));
+		presetColorButton5.setBackgroundColor(presetColors.get(4));
 	}
 
 	private void initSelectedColor(int initialColor) {
@@ -209,6 +212,7 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 		presetColorButton2.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(1)));
 		presetColorButton3.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(2)));
 		presetColorButton4.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(3)));
+		presetColorButton5.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(4)));
 	}
 
 	private void makeView(Context context) {
