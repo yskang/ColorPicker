@@ -17,11 +17,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e296828-61d8-4914-9d6f-1b24e35942ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java" afterPath="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/color_picker.xml" afterPath="$PROJECT_DIR$/res/layout/color_picker.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ColorPicker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,7 +86,25 @@
       <file leaf-file-name="ColorPicker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="0" selection-start="3887" selection-end="3887" vertical-scroll-proportion="0.5311284" vertical-offset="1121" max-vertical-offset="6528">
+            <state line="432" column="5" selection-start="15327" selection-end="15327" vertical-scroll-proportion="0.8211587" vertical-offset="6321" max-vertical-offset="6783">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnColorTouch.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorTouch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="33" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnColorPickerListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorPickerListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="17" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
               <folding />
             </state>
           </provider>
@@ -100,17 +113,34 @@
       <file leaf-file-name="DisplaySize.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/DisplaySize.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="4" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="782">
+            <state line="25" column="4" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="731">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="color_picker.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/color_picker.xml">
+          <provider editor-type-id="text-editor">
+            <state line="99" column="27" selection-start="3676" selection-end="3676" vertical-scroll-proportion="0.0" vertical-offset="1167" max-vertical-offset="2754">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="36" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="969">
-              <folding />
+            <state line="46" column="49" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1088">
+              <folding>
+                <element signature="e#1211#1364#0" expanded="true" />
+                <element signature="e#1359#1360#0" expanded="true" />
+                <element signature="e#1718#1875#0" expanded="true" />
+                <element signature="e#1870#1871#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,7 +148,7 @@
       <file leaf-file-name="MainActivityTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="28" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="798" max-vertical-offset="2312">
+            <state line="67" column="22" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="2312">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,38 +156,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OnColorSelectedListenerTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="35" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="782">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OnUpdateColorPicker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnUpdateColorPicker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="17" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="221">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="54" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OnPresetColorButtonClickListener.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="4" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="442">
+            <state line="16" column="50" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="425">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OnColorSelectedListenerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="35" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="782">
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#760#769#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,17 +180,10 @@
       <file leaf-file-name="OnStartButton.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnStartButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="459">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OnSVPicker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnSVPicker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="374">
-              <folding />
+            <state line="11" column="11" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -352,17 +360,17 @@
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/color_picker.xml" />
         <option value="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
         <option value="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" />
         <option value="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java" />
+        <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-5" />
-    <option name="y" value="-4" />
-    <option name="width" value="1930" />
-    <option name="height" value="1089" />
+    <option name="x" value="1915" />
+    <option name="y" value="333" />
+    <option name="width" value="1376" />
+    <option name="height" value="752" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -424,87 +432,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPickerTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPickerTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="colorpicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ColorPicker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -831,17 +763,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="-4" width="1930" height="1089" extended-state="6" />
+    <frame x="1915" y="333" width="1376" height="752" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18049793" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.7172557" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902735" sideWeight="0.67275745" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43451142" sideWeight="0.31875" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26666668" sideWeight="0.31914893" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.28632027" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.28632027" order="3" side_tool="true" content_ui="tabs" />
@@ -852,13 +785,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2375" sideWeight="0.5654886" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43451142" sideWeight="0.68125" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24544074" sideWeight="0.73333335" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26666668" sideWeight="0.68085104" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -879,23 +811,9 @@
         <state line="12" column="18" selection-start="358" selection-end="358" vertical-scroll-proportion="0.2457293" vertical-offset="0" max-vertical-offset="761" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorPickerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorSelectedListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="17" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorTouch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
           <folding />
         </state>
       </provider>
@@ -907,23 +825,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnSVPicker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="13" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnStartButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
@@ -935,13 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/DisplaySize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="4" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="54" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
@@ -949,30 +846,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/color_picker.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorTouch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="27" selection-start="3676" selection-end="3676" vertical-scroll-proportion="0.8177496" vertical-offset="1167" max-vertical-offset="2754">
-          <folding>
-            <element signature="e#446#468#0" expanded="true" />
-            <element signature="e#1536#1563#0" expanded="true" />
-            <element signature="e#3981#4002#0" expanded="true" />
-          </folding>
+        <state line="20" column="33" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="561">
+          <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorPickerListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/DisplaySize.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="36" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="969">
+        <state line="25" column="4" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="28" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="798" max-vertical-offset="2312">
+        <state line="67" column="22" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="2312">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -982,13 +879,54 @@
     <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="35" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="782">
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#760#769#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnStartButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="49" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1088">
+          <folding>
+            <element signature="e#1211#1364#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1718#1875#0" expanded="true" />
+            <element signature="e#1870#1871#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/color_picker.xml">
+      <provider editor-type-id="text-editor">
+        <state line="99" column="27" selection-start="3676" selection-end="3676" vertical-scroll-proportion="0.0" vertical-offset="1167" max-vertical-offset="2754">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="50" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="425">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="0" selection-start="3887" selection-end="3887" vertical-scroll-proportion="0.5311284" vertical-offset="1121" max-vertical-offset="6528">
+        <state line="432" column="5" selection-start="15327" selection-end="15327" vertical-scroll-proportion="0.8211587" vertical-offset="6321" max-vertical-offset="6783">
           <folding />
         </state>
       </provider>

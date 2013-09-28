@@ -416,4 +416,19 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
+
+
+    public void updatePresetButtonColors(ArrayList<Integer> presetColors) {
+        presetColorButton1.setBackgroundColor(presetColors.get(0));
+        presetColorButton2.setBackgroundColor(presetColors.get(1));
+        presetColorButton3.setBackgroundColor(presetColors.get(2));
+        presetColorButton4.setBackgroundColor(presetColors.get(3));
+        presetColorButton5.setBackgroundColor(presetColors.get(4));
+
+        presetColorButton1.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(0)));
+        presetColorButton2.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(1)));
+        presetColorButton3.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(2)));
+        presetColorButton4.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(3)));
+        presetColorButton5.setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(4)));
+    }
 }
