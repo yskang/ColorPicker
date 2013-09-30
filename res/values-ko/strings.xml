@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">색상 선택</string>
+    <string name="action_settings">Settings</string>
+    <string name="buttonDescription">Click button to start ColorPicker dialog</string>
+    <string name="startButton">Start ColorPicker</string>
+    <string name="dialogTitle">ColorPicker</string>
+    <string name="positive">설정</string>
+    <string name="negative">취소</string>
+    <string name="previewTitle">미리보기 [신규색상|기존색상]</string>
+    <string name="presetColorsTitle">사용된 색상들</string>
+    <string name="alpha_title">투명도</string>
+
+</resources>
