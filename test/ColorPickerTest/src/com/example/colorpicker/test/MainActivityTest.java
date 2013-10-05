@@ -6,6 +6,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.widget.SeekBar;
 
 import com.jayway.android.robotium.solo.Solo;
+import com.yskang.colorpicker.GWLatticeBackgroundImageView;
 import com.yskang.colorpicker.example.MainActivity;
 import com.yskang.colorpicker.example.R;
 
@@ -46,71 +47,64 @@ public class MainActivityTest extends
 	}
 
 	public void testSetInitialColor_1(){
-		ColorDrawable colorDrawable;
 		solo.clickOnButton(0);
-		colorDrawable = (ColorDrawable)solo.getView(R.id.previewBox).getBackground();
-		assertEquals(Color.rgb(55, 128, 128), colorDrawable.getColor());
+        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
+		assertEquals(Color.rgb(55, 128, 128), previewBoxView.getSettingColor());
 	}
 	
 	public void testSetInitialColor_2(){
-		ColorDrawable colorDrawable;
 		solo.clickOnButton(1);
-		colorDrawable = (ColorDrawable)solo.getView(R.id.previewBox).getBackground();
-		assertEquals(Color.MAGENTA, colorDrawable.getColor());
+        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
+		assertEquals(Color.MAGENTA, previewBoxView.getSettingColor());
 	}
 
 	public void testSelectedColorShouldUpdateButtonColor() throws Exception {
 		solo.clickOnButton(1);
 		solo.clickOnView(solo.getView(R.id.SVBox));
-		ColorDrawable colorDrawable = (ColorDrawable)solo.getView(R.id.previewBox).getBackground();
-		int selectedColor = colorDrawable.getColor();
-		
-		solo.clickOnButton(6);
-		colorDrawable = (ColorDrawable) solo.getView(R.id.startColorPicker_2).getBackground();
-		assertEquals(selectedColor, colorDrawable.getColor());
+
+        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
+        int selectedColor = previewBoxView.getSettingColor();
+
+		solo.clickOnButton(1);
+
+        ColorDrawable startColorPickerButton = (ColorDrawable) solo.getView(R.id.startColorPicker_2).getBackground();
+		assertEquals(selectedColor, startColorPickerButton.getColor());
 	}
 	
 	public void testMainActivityCanInitialPresetColors() throws Exception {
-		ColorDrawable presetButtonDrawable1;
-		ColorDrawable presetButtonDrawable2;
-		ColorDrawable presetButtonDrawable3;
-		ColorDrawable presetButtonDrawable4;
-		ColorDrawable presetButtonDrawable5;
-
 		solo.clickOnButton(0);
-		
-		presetButtonDrawable1 = (ColorDrawable) solo.getView(R.id.presetButton_1).getBackground();
-		presetButtonDrawable2 = (ColorDrawable) solo.getView(R.id.presetButton_2).getBackground();
-		presetButtonDrawable3 = (ColorDrawable) solo.getView(R.id.presetButton_3).getBackground();
-		presetButtonDrawable4 = (ColorDrawable) solo.getView(R.id.presetButton_4).getBackground();
-		presetButtonDrawable5 = (ColorDrawable) solo.getView(R.id.presetButton_5).getBackground();
 
-		assertEquals(Color.BLUE, presetButtonDrawable1.getColor());
-		assertEquals(Color.CYAN, presetButtonDrawable2.getColor());
-		assertEquals(Color.GREEN, presetButtonDrawable3.getColor());
-		assertEquals(Color.RED, presetButtonDrawable4.getColor());
-		assertEquals(Color.RED, presetButtonDrawable5.getColor());
+        GWLatticeBackgroundImageView view1 = (GWLatticeBackgroundImageView) solo.getView(R.id.presetButton_1);
+        GWLatticeBackgroundImageView view2 = (GWLatticeBackgroundImageView) solo.getView(R.id.presetButton_2);
+        GWLatticeBackgroundImageView view3 = (GWLatticeBackgroundImageView) solo.getView(R.id.presetButton_3);
+        GWLatticeBackgroundImageView view4 = (GWLatticeBackgroundImageView) solo.getView(R.id.presetButton_4);
+        GWLatticeBackgroundImageView view5 = (GWLatticeBackgroundImageView) solo.getView(R.id.presetButton_5);
+
+		assertEquals(Color.BLUE, view1.getSettingColor());
+		assertEquals(Color.CYAN, view2.getSettingColor());
+		assertEquals(Color.GREEN, view3.getSettingColor());
+		assertEquals(Color.RED, view4.getSettingColor());
+		assertEquals(Color.RED, view5.getSettingColor());
 	}
 	
 	public void testSelectedColorShouldUpdatedByPresetButton() throws Exception {
 		solo.clickOnButton(0);
-		solo.clickOnButton(3);
+		solo.clickOnImageButton(3);
 
-		ColorDrawable previewViewDrawable;
-		previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
+        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
 		
-		assertEquals(Color.RED, previewViewDrawable.getColor());
+		assertEquals(Color.RED, previewBoxView.getSettingColor());
 	}
 
     public void testAlphaSetting() throws Exception {
         solo.clickOnButton(0);
-        solo.clickOnButton(3);
+        solo.clickOnImageButton(3);
         solo.setProgressBar(0,50);
 
-        ColorDrawable previewViewDrawable;
-        previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
+        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
+        previewBoxView.getSettingColor();
 
-        assertEquals(Color.argb(50,255,0,0),previewViewDrawable.getColor());
+        assertEquals(Color.argb(50, 255, 0, 0), previewBoxView.getSettingColor());
     }
 
 
@@ -119,12 +113,11 @@ public class MainActivityTest extends
 
         solo.setProgressBar(0, 30);
 
-        solo.clickOnButton(3);
+        solo.clickOnImageButton(3);
 
-        ColorDrawable previewViewDrawable;
-        previewViewDrawable = (ColorDrawable) solo.getView(R.id.previewBox).getBackground();
+        GWLatticeBackgroundImageView previewBox = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
 
-        assertEquals(Color.argb(255, 255, 0, 0), previewViewDrawable.getColor());
+        assertEquals(Color.argb(255, 255, 0, 0), previewBox.getSettingColor());
         assertEquals(255, ((SeekBar) solo.getView(R.id.alphaSeekBar)).getProgress());
     }
 }

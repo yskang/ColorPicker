@@ -1,6 +1,5 @@
 package com.yskang.colorpicker;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -16,18 +15,12 @@ import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Shader.TileMode;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
-import android.widget.TextView;
+
 import java.util.ArrayList;
-import java.util.BitSet;
 
 import static android.widget.SeekBar.OnSeekBarChangeListener;
 
@@ -42,7 +35,7 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 	private Bitmap svBitmap;
 	private ImageView svBox;
 	private ImageView hueBar;
-	private TextView previewBox;
+	private GWLatticeBackgroundImageView previewBox;
 	private int hue_x;
 	private int hue_y;
 	private int selectedHue;
@@ -61,12 +54,12 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 	private Paint svPaint;
 	private Shader shaderValue;
 	private int selectedColor;
-	private View view;
-	private Button presetColorButton1;
-	private Button presetColorButton2;
-	private Button presetColorButton3;
-	private Button presetColorButton4;
-	private Button presetColorButton5;
+
+	private GWLatticeBackgroundImageView presetColorButton1;
+	private GWLatticeBackgroundImageView presetColorButton2;
+	private GWLatticeBackgroundImageView presetColorButton3;
+	private GWLatticeBackgroundImageView presetColorButton4;
+	private GWLatticeBackgroundImageView presetColorButton5;
 	private ArrayList<Integer> presetColors;
 	private OnColorSelectedListener onColorPickerSelectedListener;
     private Paint paintBlackFill;
@@ -76,6 +69,7 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
     private float selectionMarkerR;
     private SeekBar alphaSeekBar;
     private int alpha = 255;
+    private GWLatticeBackgroundImageView testButton;
 
     public ColorPicker(Context context, int initialColor, OnColorSelectedListener onColorPickerSelectedListener, ArrayList<Integer> presetColors){
 		this.context = context;
@@ -99,11 +93,11 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
     }
 
     private void initPresetColors(ArrayList<Integer> presetColors) {
-		presetColorButton1 = (Button) colorPickerView.findViewById(R.id.presetButton_1);
-		presetColorButton2 = (Button) colorPickerView.findViewById(R.id.presetButton_2);
-		presetColorButton3 = (Button) colorPickerView.findViewById(R.id.presetButton_3);
-		presetColorButton4 = (Button) colorPickerView.findViewById(R.id.presetButton_4);
-		presetColorButton5 = (Button) colorPickerView.findViewById(R.id.presetButton_5);
+		presetColorButton1 = (GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_1);
+		presetColorButton2 = (GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_2);
+		presetColorButton3 = (GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_3);
+		presetColorButton4 = (GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_4);
+		presetColorButton5 = (GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_5);
 
 		presetColorButton1.setBackgroundColor(presetColors.get(0));
 		presetColorButton2.setBackgroundColor(presetColors.get(1));
@@ -199,7 +193,7 @@ public class ColorPicker implements OnUpdateColorPicker, OnSeekBarChangeListener
 		
 		svBox.setOnTouchListener(new OnColorTouch(new OnSVPicker(this)));
 		
-		previewBox = (TextView) colorPickerView.findViewById(R.id.previewBox);
+		previewBox = (GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.previewBox);
 
         alphaSeekBar = (SeekBar) colorPickerView.findViewById(R.id.alphaSeekBar);
         alphaSeekBar.setMax(255);
