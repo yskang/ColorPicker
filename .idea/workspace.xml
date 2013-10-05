@@ -15,11 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e296828-61d8-4914-9d6f-1b24e35942ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/GWLatticeBackgroundImageView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/color_picker.xml" afterPath="$PROJECT_DIR$/res/layout/color_picker.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/GWLatticeBackgroundImageView.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/GWLatticeBackgroundImageView.java" />
     </list>
     <ignored path="ColorPicker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,10 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GWLatticeBackgroundImageView.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GWLatticeBackgroundImageView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/GWLatticeBackgroundImageView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="43" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2394">
+            <state line="94" column="38" selection-start="2821" selection-end="2821" vertical-scroll-proportion="0.32781458" vertical-offset="1494" max-vertical-offset="2394">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,10 +123,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivityTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivityTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="10" selection-start="3478" selection-end="3478" vertical-scroll-proportion="0.65562916" vertical-offset="1134" max-vertical-offset="2178">
+            <state line="88" column="4" selection-start="3332" selection-end="3332" vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="2178">
               <folding />
             </state>
           </provider>
@@ -332,6 +328,7 @@
         <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
         <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/ImageViewWithBackground.java" />
         <option value="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" />
+        <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/GWLatticeBackgroundImageView.java" />
       </list>
     </option>
   </component>
@@ -932,15 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/GWLatticeBackgroundImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="43" selection-start="2323" selection-end="2323" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2394">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/ColorPickerExample/gen/com/yskang/colorpicker/example/R.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="19" selection-start="181" selection-end="181" vertical-scroll-proportion="0.17175573" vertical-offset="0" max-vertical-offset="524">
@@ -957,8 +945,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="10" selection-start="3478" selection-end="3478" vertical-scroll-proportion="0.65562916" vertical-offset="1134" max-vertical-offset="2178">
+        <state line="88" column="4" selection-start="3332" selection-end="3332" vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="2178">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/GWLatticeBackgroundImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="38" selection-start="2821" selection-end="2821" vertical-scroll-proportion="0.32781458" vertical-offset="1494" max-vertical-offset="2394">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

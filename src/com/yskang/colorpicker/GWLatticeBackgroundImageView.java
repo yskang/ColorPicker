@@ -92,7 +92,7 @@ public class GWLatticeBackgroundImageView extends ImageButton {
         Canvas canvas = new Canvas();
         canvas.setBitmap(imageBitmap);
 
-        drawGrayWhiteLattice(canvas, 2);
+        drawGrayWhiteLattice(canvas, 5);
 
         Paint colorPaint = new Paint();
         colorPaint.setColor(settingColor);
