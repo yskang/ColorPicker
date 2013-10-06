@@ -38,7 +38,7 @@ public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener,
 
 		makeView(context);
 		setViews(initialColor);
-		initPresetColors(presetColors);
+		initPresetColors();
         initOldColorBox(initialColor);
 		makeDialog();
 		initPresetColorButtons(presetColors);
@@ -48,16 +48,12 @@ public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener,
         colorPickerView.findViewById(R.id.oldColorBox).setBackgroundColor(initialColor);
     }
 
-    private void initPresetColors(ArrayList<Integer> presetColors) {
+    private void initPresetColors() {
 		presetColorButtons.add((GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_1));
 		presetColorButtons.add((GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_2));
 		presetColorButtons.add((GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_3));
 		presetColorButtons.add((GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_4));
 		presetColorButtons.add((GWLatticeBackgroundImageView) colorPickerView.findViewById(R.id.presetButton_5));
-
-        for(int i = 0 ; i < presetColorButtons.size() ; i++){
-            presetColorButtons.get(i).setBackgroundColor(presetColors.get(i));
-        }
 	}
 
 
@@ -82,6 +78,7 @@ public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener,
 
 	public void initPresetColorButtons(ArrayList<Integer> presetColors) {
         for(int i = 0 ; i < presetColors.size() ; i++){
+            presetColorButtons.get(i).setBackgroundColor(presetColors.get(i));
             presetColorButtons.get(i).setOnClickListener(new OnPresetColorButtonClickListener(presetColors.get(i), hueBar, svBox, alphaSeekBar));
         }
 	}
