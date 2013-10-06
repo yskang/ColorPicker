@@ -28,25 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e296828-61d8-4914-9d6f-1b24e35942ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPickerPaint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/HuePicker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnHueChangeListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnSVChangeListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/SVPicker.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorPickerListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnColorTouch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnHuePicker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnSVPicker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnUpdateColorPicker.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnStartButton.java" afterPath="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/OnStartButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java" afterPath="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorTouchListenerUnitTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorTouchListenerUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnHuePickerListenerUnitTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnHuePickerListenerUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnSVPickerListenerUnitTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnSVPickerListenerUnitTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/color_picker.xml" afterPath="$PROJECT_DIR$/res/layout/color_picker.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ColorPicker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -113,14 +95,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ColorPicker.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ColorPicker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="26" selection-start="3015" selection-end="3015" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2754">
+            <state line="82" column="10" selection-start="3089" selection-end="3089" vertical-scroll-proportion="0.36092716" vertical-offset="1024" max-vertical-offset="2754">
               <folding>
                 <element signature="e#868#898#0" expanded="true" />
-                <element signature="e#3726#3743#0" expanded="true" />
-                <element signature="e#3930#3947#0" expanded="true" />
+                <element signature="e#3725#3742#0" expanded="true" />
+                <element signature="e#3929#3946#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,10 +164,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="color_picker.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="color_picker.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/color_picker.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="40" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.6262976" vertical-offset="394" max-vertical-offset="3006">
+            <state line="42" column="40" selection-start="1584" selection-end="1584" vertical-scroll-proportion="-13.407408" vertical-offset="394" max-vertical-offset="3006">
               <folding />
             </state>
           </provider>
@@ -388,12 +370,12 @@
         <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/OnStartButton.java" />
         <option value="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/OnStartButton.java" />
         <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/OnHueChangeListener.java" />
-        <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
         <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java" />
         <option value="$PROJECT_DIR$/example/ColorPickerExample/src/com/yskang/colorpicker/example/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/SVPicker.java" />
         <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/HuePicker.java" />
         <option value="$PROJECT_DIR$/res/layout/color_picker.xml" />
+        <option value="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
       </list>
     </option>
   </component>
@@ -931,23 +913,23 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17959617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32852563" sideWeight="0.6726886" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.6716259" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32837406" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32731137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32731137" sideWeight="0.3263889" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32837406" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.28632027" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.28632027" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31668437" sideWeight="0.61004275" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32731137" sideWeight="0.6736111" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32731137" sideWeight="0.6736111" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24465811" sideWeight="0.6726886" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24465811" sideWeight="0.6716259" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41339" sideWeight="0.6805556" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="4" side_tool="false" content_ui="combo" />
@@ -1085,17 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="26" selection-start="3015" selection-end="3015" vertical-scroll-proportion="0.0" vertical-offset="954" max-vertical-offset="2754">
-          <folding>
-            <element signature="e#868#898#0" expanded="true" />
-            <element signature="e#3726#3743#0" expanded="true" />
-            <element signature="e#3930#3947#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/SVPicker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="97" column="8" selection-start="3043" selection-end="3043" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="3996">
@@ -1112,12 +1083,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/color_picker.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="40" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.6262976" vertical-offset="394" max-vertical-offset="3006">
+        <state line="42" column="40" selection-start="1584" selection-end="1584" vertical-scroll-proportion="-13.407408" vertical-offset="394" max-vertical-offset="3006">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="10" selection-start="3089" selection-end="3089" vertical-scroll-proportion="0.36092716" vertical-offset="1024" max-vertical-offset="2754">
+          <folding>
+            <element signature="e#868#898#0" expanded="true" />
+            <element signature="e#3725#3742#0" expanded="true" />
+            <element signature="e#3929#3946#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

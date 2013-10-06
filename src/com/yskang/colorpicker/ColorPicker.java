@@ -80,7 +80,7 @@ public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener,
         getInitialTPColor(initialColor);
     }
 
-	private void initPresetColorButtons(ArrayList<Integer> presetColors) {
+	public void initPresetColorButtons(ArrayList<Integer> presetColors) {
         for(int i = 0 ; i < presetColors.size() ; i++){
             presetColorButtons.get(i).setOnClickListener(new OnPresetColorButtonClickListener(presetColors.get(i), hueBar, svBox, alphaSeekBar));
         }
