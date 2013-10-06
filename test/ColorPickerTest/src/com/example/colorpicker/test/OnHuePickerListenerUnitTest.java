@@ -3,9 +3,6 @@ package com.example.colorpicker.test;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 
-import com.yskang.colorpicker.OnHuePicker;
-import com.yskang.colorpicker.OnUpdateColorPicker;
-
 import junit.framework.TestCase;
 
 public class OnHuePickerListenerUnitTest extends TestCase {

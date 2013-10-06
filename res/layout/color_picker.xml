@@ -7,37 +7,43 @@
         android:id="@+id/previewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/SVBox"
+        android:layout_alignLeft="@+id/pickerLayout"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/previewTitle"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <ImageView
-        android:id="@id/SVBox"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="5dp"
-        android:layout_below="@+id/previewTitle"
-        android:layout_marginTop="10dp" />
+        android:orientation="horizontal"
+        android:layout_below="@id/previewTitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/pickerLayout">
 
-    <ImageView
-        android:id="@+id/HueBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher"
-        android:layout_below="@+id/previewBoxLayout"
-        android:layout_alignRight="@+id/previewBoxLayout"
-        android:layout_marginTop="10dp" />
+        <com.yskang.colorpicker.SVPicker
+            android:id="@+id/SVBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1" />
+
+        <com.yskang.colorpicker.HuePicker
+            android:id="@+id/HueBar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="3" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/presetColorsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/SVBox"
-        android:layout_alignRight="@id/HueBar"
-        android:layout_below="@id/HueBar"
+        android:layout_alignLeft="@id/pickerLayout"
+        android:layout_alignRight="@id/pickerLayout"
+        android:layout_below="@id/pickerLayout"
         android:text="@string/presetColorsTitle"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -46,8 +52,8 @@
         android:id="@+id/presetButtons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/SVBox"
-        android:layout_alignRight="@id/HueBar"
+        android:layout_alignLeft="@id/pickerLayout"
+        android:layout_alignRight="@id/pickerLayout"
         android:layout_below="@+id/presetColorsTitle"
         android:layout_marginTop="2dp">
 
@@ -109,7 +115,7 @@
         android:text="@string/alpha_title"
         android:id="@+id/alphaTitle"
         android:layout_below="@+id/presetButtons"
-        android:layout_alignLeft="@id/SVBox"
+        android:layout_alignLeft="@id/pickerLayout"
         android:layout_marginTop="10dp" />
 
     <SeekBar
@@ -117,14 +123,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/alphaSeekBar"
         android:layout_below="@id/alphaTitle"
-        android:layout_alignLeft="@id/SVBox"
-        android:layout_alignRight="@id/HueBar" />
+        android:layout_alignLeft="@id/pickerLayout"
+        android:layout_alignRight="@id/pickerLayout" />
 
     <TextView
         android:id="@+id/textViewForBottomSpace"
         android:layout_width="10dp"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@id/SVBox"
+        android:layout_alignRight="@id/pickerLayout"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_below="@+id/alphaSeekBar" />
 

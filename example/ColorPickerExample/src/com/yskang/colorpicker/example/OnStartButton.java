@@ -1,6 +1,5 @@
-package com.yskang.colorpicker;
+package com.yskang.colorpicker.example;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.view.View;
 import android.view.View.OnClickListener;

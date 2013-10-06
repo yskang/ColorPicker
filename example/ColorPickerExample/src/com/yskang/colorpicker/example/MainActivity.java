@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Button;
 
-import com.yskang.colorpicker.example.R;
 import com.yskang.colorpicker.ColorPicker;
 import com.yskang.colorpicker.OnColorSelectedListener;
-import com.yskang.colorpicker.OnStartButton;
 
 public class MainActivity extends Activity {
 
@@ -20,7 +18,7 @@ public class MainActivity extends Activity {
 	private ColorPicker colorPicker_1;
 	private ColorPicker colorPicker_2;
 	private int color_1 = Color.rgb(55, 128, 128);
-	private int color_2 = Color.MAGENTA;
+	private int color_2 = Color.argb(128, 128, 128, 255);
 	private ArrayList<Integer> presetColors = new ArrayList<Integer>();
 
 	@Override
@@ -30,9 +28,9 @@ public class MainActivity extends Activity {
 
 		presetColors.add(Color.BLUE);
 		presetColors.add(Color.CYAN);
-		presetColors.add(Color.GREEN);
-		presetColors.add(Color.RED);
-		presetColors.add(Color.RED);
+		presetColors.add(Color.argb(255, 222, 100, 18));
+		presetColors.add(Color.argb(128, 222, 100, 18));
+		presetColors.add(Color.argb(10, 128, 128, 128));
 
 		
 		startButton_1 = (Button) findViewById(R.id.startColorPicker_1);

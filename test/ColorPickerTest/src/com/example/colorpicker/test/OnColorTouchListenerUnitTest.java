@@ -7,9 +7,6 @@ import org.jmock.Mockery;
 
 import android.view.MotionEvent;
 
-import com.yskang.colorpicker.OnColorPickerListener;
-import com.yskang.colorpicker.OnColorTouch;
-
 public class OnColorTouchListenerUnitTest extends TestCase {
 
 	Mockery context = new Mockery();
