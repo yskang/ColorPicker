@@ -15,7 +15,6 @@ import java.util.Iterator;
 
 import static android.widget.SeekBar.OnSeekBarChangeListener;
 
-
 public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener, OnHueChangeListener {
 
 	private Context context;
