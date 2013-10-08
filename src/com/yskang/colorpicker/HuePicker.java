@@ -85,12 +85,8 @@ public class HuePicker extends ImageView{
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        Log.d("yskang", "Hue sizeChanged");
-
         panelWidth = getMeasuredWidth();
-        panelHeight = (int)(panelWidth * 3/*1.5*/);
-        if(panelWidth == 0) panelWidth = 1;
-        if(panelHeight == 0) panelHeight = 1;
+        panelHeight = getMeasuredHeight();
 
         initPaints();
         initPosition();

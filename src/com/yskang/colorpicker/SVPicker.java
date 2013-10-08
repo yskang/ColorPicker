@@ -91,10 +91,7 @@ public class SVPicker extends ImageView{
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         panelWidth = getMeasuredWidth();
-        panelHeight = (int)(panelWidth /**0.5*/);
-        if(panelWidth == 0) panelWidth = 1;
-        if(panelHeight == 0) panelHeight = 1;
-        Log.d("yskang", "[onSizeChanged] width : " + panelWidth + " height: " + panelHeight);
+        panelHeight = getMeasuredHeight();
         selectionMarkerR = displaySize.getPixel(15);
         initPosition(initialColor);
         makeSVPanelBitmap();
