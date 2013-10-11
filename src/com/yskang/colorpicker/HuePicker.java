@@ -9,7 +9,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
@@ -213,7 +212,6 @@ public class HuePicker extends ImageView{
     }
 
     public void setInitialColor(int initialColor) {
-        Log.d("yskang", "Hue InitColor");
         this.initialColor = initialColor;
     }
 

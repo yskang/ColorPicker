@@ -6,12 +6,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import static android.widget.SeekBar.OnSeekBarChangeListener;
 

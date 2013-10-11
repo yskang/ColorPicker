@@ -10,7 +10,6 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
