@@ -27,22 +27,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e296828-61d8-4914-9d6f-1b24e35942ed" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorTouchListenerUnitTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnHuePickerListenerUnitTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnSVPickerListenerUnitTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/ColorPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/ColorPickerTest.iml" afterPath="$PROJECT_DIR$/test/ColorPickerTest/ColorPickerTest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/HuePicker.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/HuePicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java" afterPath="$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/OnColorSelectedListenerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnHueChangeListener.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnHueChangeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnPresetColorButtonClickListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnSVChangeListener.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/OnSVChangeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/yskang/colorpicker/SVPicker.java" afterPath="$PROJECT_DIR$/src/com/yskang/colorpicker/SVPicker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="7e296828-61d8-4914-9d6f-1b24e35942ed" name="Default" comment="" />
     <ignored path="ColorPicker.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -141,7 +126,7 @@
       <file leaf-file-name="MainActivityTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="0" selection-start="3626" selection-end="3626" vertical-scroll-proportion="0.4361905" vertical-offset="1463" max-vertical-offset="2322">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2322">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -960,13 +945,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="-4" width="1930" height="1089" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17959617" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32731137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32731137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41232732" sideWeight="0.31944445" order="8" side_tool="true" content_ui="tabs" />
@@ -980,8 +965,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24465811" sideWeight="0.5876727" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41232732" sideWeight="0.6805556" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24465811" sideWeight="0.6726886" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41232732" sideWeight="0.6805556" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="95" y="96" width="1730" height="889" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.6992561" order="4" side_tool="false" content_ui="combo" />
@@ -1145,7 +1130,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ColorPickerTest/src/com/example/colorpicker/test/MainActivityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="0" selection-start="3626" selection-end="3626" vertical-scroll-proportion="0.4361905" vertical-offset="1463" max-vertical-offset="2322">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2322">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
