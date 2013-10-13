@@ -10,7 +10,7 @@ This dialog can be initialized by specific color then the coursor also moved to 
 
 Preview Image
 =============
-![image](https://github.com/yskang/ColorPicker/blob/master/screen_shot.png)
+![image](https://raw.github.com/yskang/ColorPicker/master/screen_shot.png)
 
 License
 =======
