@@ -38,6 +38,6 @@ License
    limitations under the License.
 </pre>
 
-Devoleped By
+Developed By
 ============
 Yongsung Kang
