@@ -10,8 +10,7 @@ This dialog can be initialized by specific color then the coursor also moved to 
 
 Preview Image
 =============
-[here]https://docs.google.com/file/d/0B2jJXvjqFLIGcU44MmNzZWNBdVE/edit?usp=sharing[here]
-![image](https://docs.google.com/file/d/0B2jJXvjqFLIGcU44MmNzZWNBdVE/edit?usp=sharing)
+![image](https://raw.github.com/yskang/ColorPicker/master/res/drawable-xxhdpi/ic_launcher.png)
 
 License
 =======
