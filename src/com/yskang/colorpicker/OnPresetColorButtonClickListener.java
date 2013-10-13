@@ -6,25 +6,28 @@ import android.widget.SeekBar;
 
 public class OnPresetColorButtonClickListener implements OnClickListener{
 	private int color;
-    private SeekBar listener;
+    private SeekBar alphaSeekBarListener;
+    private ColorPicker colorPicker;
     private HuePicker hueBar;
     private SVPicker svBox;
 
-    public OnPresetColorButtonClickListener(int color, HuePicker hueBar, SVPicker svBox, SeekBar listener){
+    public OnPresetColorButtonClickListener(ColorPicker colorPicker, int color, HuePicker hueBar, SVPicker svBox, SeekBar alphaSeekBarListener){
+        this.colorPicker = colorPicker;
         this.hueBar = hueBar;
         this.svBox = svBox;
 		this.color = color;
-        this.listener = listener;
+        this.alphaSeekBarListener = alphaSeekBarListener;
     }
 	
 	@Override
 	public void onClick(View v) {
         int alpha = (color & 0xFF000000) >>> 24;
-        listener.setProgress(alpha);
+        alphaSeekBarListener.setProgress(alpha);
+
+        colorPicker.setInitColor(color);
 
 		hueBar.setUpdateInitialColor(this.color);
         svBox.setUpdateInitialColor(hueBar.getBaseColor(), this.color);
-
 	}
 
 }

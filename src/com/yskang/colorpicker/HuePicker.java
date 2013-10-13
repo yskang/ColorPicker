@@ -93,7 +93,7 @@ public class HuePicker extends ImageView{
         updateSelectedColor((int)hue_x, (int)hue_y);
         drawSelectionMarkOnHueBitmap(hueBitmap);
         setImageBitmap(hueBitmapCopy);
-        notifyToListeners(selectedHue, initialColor);
+        notifyToListeners(selectedHue, false);
     }
 
     private void initPosition() {
@@ -101,7 +101,7 @@ public class HuePicker extends ImageView{
         Color.colorToHSV(initialColor, hsv);
 
         hue_x = (int)(0.7 * (panelWidth-1));
-        hue_y = (int)(hsv[0] * (panelHeight-2*positionMarkerR-1)/360 + positionMarkerR);
+        hue_y = (int)(hsv[0] * (panelHeight-2*positionMarkerR)/360 + positionMarkerR);
     }
 
     @Override
@@ -127,7 +127,7 @@ public class HuePicker extends ImageView{
                 if(y > panelHeight - (positionMarkerR)) y = (int)(panelHeight - positionMarkerR -1);
 
                 updateSelectedColor(x, y);
-                notifyToListeners(drawSelectionMarkOnHueBitmap(x, y), initialColor);
+                notifyToListeners(drawSelectionMarkOnHueBitmap(x, y), true);
                 break;
             }
 
@@ -201,9 +201,9 @@ public class HuePicker extends ImageView{
                 Color.BLACK, Shader.TileMode.CLAMP);
     }
 
-    private void notifyToListeners(int color, int initialColor){
+    private void notifyToListeners(int color, boolean byUser){
         for(OnHueChangeListener listener : listeners){
-            listener.onHueChanged(color);
+            listener.onHueChanged(color, byUser);
         }
     }
 
@@ -227,6 +227,6 @@ public class HuePicker extends ImageView{
         updateSelectedColor((int)hue_x, (int)hue_y);
         drawSelectionMarkOnHueBitmap(hueBitmap);
         setImageBitmap(hueBitmapCopy);
-        notifyToListeners(selectedHue, initialColor);
+        notifyToListeners(selectedHue, false);
     }
 }

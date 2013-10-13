@@ -18,7 +18,7 @@ public class MainActivityTest extends
 	}
 
 	private Solo solo;
-	
+
 	protected void setUp() throws Exception {
 		super.setUp();
 		solo = new Solo(getInstrumentation(), getActivity());
@@ -27,20 +27,20 @@ public class MainActivityTest extends
 	public void testMainActivity() {
 		solo.assertCurrentActivity("Check on first activity", MainActivity.class);
 	}
-	
+
 	public void testTextIsCorrect(){
 		assertNotNull(solo.getText("Click button to start ColorPicker dialog"));
 	}
-	
+
 	public void testButtonTextIsCorrect(){
 		assertNotNull(solo.getButton("Start ColorPicker"));
 	}
-	
+
 	public void testStartButtonCanStartNewDialog(){
 		solo.clickOnButton(0);
 		assertEquals("Failed to open dialog", solo.getString(com.yskang.colorpicker.R.string.previewTitle), solo.getText(0).getText());
 	}
-	
+
 	public void testIsTheHueBar(){
 		solo.clickOnButton(0);
 		assertEquals(R.id.HueBar, solo.getView(R.id.HueBar).getId());
@@ -48,14 +48,14 @@ public class MainActivityTest extends
 
 	public void testSetInitialColor_1(){
 		solo.clickOnButton(0);
-        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
-		assertEquals(Color.rgb(55, 128, 128), previewBoxView.getSettingColor());
+        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.presetButton_1);
+		assertEquals(Color.BLUE, previewBoxView.getSettingColor());
 	}
-	
+
 	public void testSetInitialColor_2(){
 		solo.clickOnButton(1);
-        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
-		assertEquals(Color.MAGENTA, previewBoxView.getSettingColor());
+        GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.presetButton_2);
+		assertEquals(Color.CYAN, previewBoxView.getSettingColor());
 	}
 
 	public void testSelectedColorShouldUpdateButtonColor() throws Exception {
@@ -70,7 +70,7 @@ public class MainActivityTest extends
         ColorDrawable startColorPickerButton = (ColorDrawable) solo.getView(R.id.startColorPicker_2).getBackground();
 		assertEquals(selectedColor, startColorPickerButton.getColor());
 	}
-	
+
 	public void testMainActivityCanInitialPresetColors() throws Exception {
 		solo.clickOnButton(0);
 
@@ -82,18 +82,18 @@ public class MainActivityTest extends
 
 		assertEquals(Color.BLUE, view1.getSettingColor());
 		assertEquals(Color.CYAN, view2.getSettingColor());
-		assertEquals(Color.GREEN, view3.getSettingColor());
-		assertEquals(Color.RED, view4.getSettingColor());
-		assertEquals(Color.RED, view5.getSettingColor());
+		assertEquals(Color.argb(255, 222, 100, 18), view3.getSettingColor());
+		assertEquals(Color.argb(128, 222, 100, 18), view4.getSettingColor());
+		assertEquals(Color.argb(10, 128, 128, 128), view5.getSettingColor());
 	}
-	
+
 	public void testSelectedColorShouldUpdatedByPresetButton() throws Exception {
 		solo.clickOnButton(0);
 		solo.clickOnImageButton(3);
 
         GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
-		
-		assertEquals(Color.RED, previewBoxView.getSettingColor());
+
+		assertEquals(Color.CYAN, previewBoxView.getSettingColor());
 	}
 
     public void testAlphaSetting() throws Exception {
@@ -104,7 +104,7 @@ public class MainActivityTest extends
         GWLatticeBackgroundImageView previewBoxView = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
         previewBoxView.getSettingColor();
 
-        assertEquals(Color.argb(50, 255, 0, 0), previewBoxView.getSettingColor());
+        assertEquals(50, Color.alpha(previewBoxView.getSettingColor()));
     }
 
 
@@ -117,7 +117,7 @@ public class MainActivityTest extends
 
         GWLatticeBackgroundImageView previewBox = (GWLatticeBackgroundImageView) solo.getView(R.id.previewBox);
 
-        assertEquals(Color.argb(255, 255, 0, 0), previewBox.getSettingColor());
+        assertEquals(Color.CYAN, previewBox.getSettingColor());
         assertEquals(255, ((SeekBar) solo.getView(R.id.alphaSeekBar)).getProgress());
     }
 }

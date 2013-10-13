@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ColorPicker.iml" filepath="$PROJECT_DIR$/ColorPicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/ColorPickerExample/ColorPickerExample.iml" filepath="$PROJECT_DIR$/example/ColorPickerExample/ColorPickerExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/ColorPickerTest/ColorPickerTest.iml" filepath="$PROJECT_DIR$/test/ColorPickerTest/ColorPickerTest.iml" />
     </modules>
   </component>
 </project>

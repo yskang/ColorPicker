@@ -125,7 +125,7 @@ public class SVPicker extends ImageView{
                 int y = (int)motionEvent.getY();
 
                 updateSelectedColor(x, y);
-                notifyToListeners(drawSelectionMarkerOnSVBitmap());
+                notifyToListeners(drawSelectionMarkerOnSVBitmap(), true);
                 break;
             }
 
@@ -180,9 +180,9 @@ public class SVPicker extends ImageView{
         svPaint.setAntiAlias(true);
     }
 
-    private void notifyToListeners(int color){
+    private void notifyToListeners(int color, boolean byUser){
         for(OnSVChangeListener listener : listeners){
-            listener.onSVChanged(color);
+            listener.onSVChanged(color, byUser);
         }
     }
 
@@ -190,13 +190,13 @@ public class SVPicker extends ImageView{
         listeners.add(listener);
     }
 
-    public void setBaseColor(int baseColor){
+    public void setBaseColor(int baseColor, boolean byUser){
         this.baseColor = baseColor;
         initPaints();
         makeSVPanelBitmap();
         updateSelectedColor(sv_x, sv_y);
         drawSelectionMarkerOnSVBitmap();
-        notifyToListeners(selectedColor);
+        notifyToListeners(selectedColor, byUser);
     }
 
     public void setUpdateInitialColor(int baseColor, int color){
@@ -205,7 +205,7 @@ public class SVPicker extends ImageView{
         initPosition(color);
         updateSelectedColor(sv_x, sv_y);
         drawSelectionMarkerOnSVBitmap();
-        notifyToListeners(selectedColor);
+        notifyToListeners(selectedColor, false);
     }
 
     public void setInitialColor(int initialColor) {

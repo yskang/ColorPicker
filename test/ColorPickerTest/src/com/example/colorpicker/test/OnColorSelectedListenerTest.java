@@ -33,13 +33,12 @@ public class OnColorSelectedListenerTest extends
 		presetColors.add(Color.BLUE);
 		colorPicker = new ColorPicker(getActivity(), Color.WHITE,
 				onColorSelectedListener, presetColors);
-		super.setUp();
 	}
 
 	public void testOnColorSelectedListener() throws Exception {
 		context.checking(new Expectations() {
 			{
-				oneOf(onColorSelectedListener).onSelected(-1);
+				oneOf(onColorSelectedListener).onSelected(Color.WHITE);
 			}
 		});
 

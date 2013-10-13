@@ -32,6 +32,7 @@ public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener,
     public ColorPicker(Context context, int initialColor, OnColorSelectedListener onColorPickerSelectedListener, ArrayList<Integer> presetColors){
 		this.context = context;
 		this.onColorPickerSelectedListener = onColorPickerSelectedListener;
+        selectedColor = initialColor;
 
 		makeView(context);
 		setViews(initialColor);
@@ -76,7 +77,7 @@ public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener,
 	public void initPresetColorButtons(ArrayList<Integer> presetColors) {
         for(int i = 0 ; i < presetColors.size() ; i++){
             presetColorButtons.get(i).setBackgroundColor(presetColors.get(i));
-            presetColorButtons.get(i).setOnClickListener(new OnPresetColorButtonClickListener(presetColors.get(i), hueBar, svBox, alphaSeekBar));
+            presetColorButtons.get(i).setOnClickListener(new OnPresetColorButtonClickListener(this, presetColors.get(i), hueBar, svBox, alphaSeekBar));
         }
 	}
 
@@ -154,13 +155,22 @@ public class ColorPicker implements OnSeekBarChangeListener, OnSVChangeListener,
     }
 
     @Override
-    public void onSVChanged(int svColor) {
-        selectedColor = svColor;
-        updatePreviewBox();
+    public void onSVChanged(int svColor, boolean byUser) {
+        if(byUser){
+            selectedColor = svColor;
+            updatePreviewBox();
+        }else{
+            updatePreviewBox();
+        }
+
     }
 
     @Override
-    public void onHueChanged(int hueColor) {
-        svBox.setBaseColor(hueColor);
+    public void onHueChanged(int hueColor, boolean byUser) {
+        svBox.setBaseColor(hueColor, byUser);
+    }
+
+    public void setInitColor(int color) {
+        selectedColor = color;
     }
 }
