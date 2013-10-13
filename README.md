@@ -8,6 +8,10 @@ HSV(Hue, Saturation, Value) style color picker help users to find color more eas
 This dialog can be initialized by specific color then the coursor also moved to proper positions. There are 4 preset color buttons and can be initialized by user.
 
 
+Preview Image
+=============
+![image](https://raw.github.com/yskang/ColorPicker/master/res/drawable-xxhdpi/ic_launcher.png)
+
 License
 =======
 <pre>
