@@ -7,8 +7,16 @@ HSV(Hue, Saturation, Value) style color picker help users to find color more eas
 
 This dialog can be initialized by specific color then the coursor also moved to proper positions. There are 5 preset color buttons and can be initialized by user.
 
+Features
+========
+ - Hue Picker
+ - Saturation-Value Picker
+ - Alpha Seek Bar
+ - Preview and Original Color box
+ - 5 Preset color buttons
+ - All color preview box has gray-white lattice background
 
-Preview Image
+Screen Shot
 =============
 ![image](https://raw.github.com/yskang/ColorPicker/master/screen_shot.png)
 
@@ -29,3 +37,7 @@ License
    See the License for the specific language governing permissions and
    limitations under the License.
 </pre>
+
+Devoleped By
+============
+Yongsung Kang
